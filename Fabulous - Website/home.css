@@ -2,7 +2,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top:30px;
 }
 
 html, body {
@@ -698,12 +698,12 @@ body {
 }
 .second-hero {
     position: relative;
-    height: 100vh;
+    height: 90vh;
 }
 .second-placement {
     display: flex;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 90vh;
     align-items: center;
 }
 .second-hero-content {

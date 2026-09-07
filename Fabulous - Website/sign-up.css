@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url('images/9853371_19320.jpg');
+    filter: blur(0.4px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1900px;
+    overflow: hidden;
+}
+.box {
+    /* backdrop-filter: blur(100px); */
+    width: 400px;
+    padding: 50px 25px;
+    
+    /* border-radius: 12px; */
+    text-align: center;
+    /* border: 2px white solid; */
+    transform: scale(1.2);
+}
+.form-box {
+    margin: 25px;
+}
+.username, .password, .gmail, .button {
+    padding: 5px;
+    margin: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    color: black;
+    background: rgba(255, 255, 255, 0.658);
+    border: none;
+    padding-right: 48px;
+}
+input:focus {
+    border: 0.5px solid rgb(153, 180, 255);
+}
+input::placeholder {
+    color: rgba(70, 70, 70, 0.856);
+}
+.gmail input {
+    padding-right: 48px;
+}
+button {
+    margin-top: 15px;
+    color: white;
+    width: 100%;
+    background-color: rgba(22, 21, 21, 0.884);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.hovereffect {
+    transition: transform 0.3s ease;
+}
+.hovereffect:hover {
+    transform: scale(1.05);
+}
+.sign-in-link {
+    margin-top: 20px;
+    margin-left: 7px;
+}
+p {
+    font-size: 15.5px;
+    margin-right: 6px;
+    
+}
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* "or" Divider - Bilkul Center mein set */
+.line {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-right: 10px;
+    width: 100%;
+}
+.line::before, .line::after {
+    flex: 1;
+    content: '';
+    border-bottom: 1px solid black;
+}
+.line span {
+    padding: 7px;
+    margin-bottom: 3px;
+    font-size: 15px;
+    color: black;
+}
+
+/* Google Sign Up Button & Icon Alignment */
+.google-sign-up {
+    position: relative;
+    width: 96.5%;
+    transition: transform 0.3s ease;
+}
+.google-sign-up:hover {
+    transform: scale(1.05);
+}
+.google-sign-up button {
+    background-color: white;
+    color: #333;
+    font-weight: bold;
+    padding-left: 35px; /* Text ko thoda right shift kiya taake icon ke sath center lage */
+}
+.google-sign-up img {
+    position: absolute;
+    cursor: pointer;
+    left: 60px; /* Icon ki exact positioning */
+    top: 33px;
+    transform: translateY(-55%);
+}
+.username, .password, .gmail {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.username:focus-within, 
+.password:focus-within, 
+.gmail:focus-within {
+    transform: scale(1.03);
+}
+svg {
+    pointer-events: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+        color: rgba(70, 70, 70, 0.856);
+
+}

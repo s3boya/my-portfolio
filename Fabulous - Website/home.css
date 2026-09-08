@@ -966,7 +966,7 @@ body {
     height: auto !important;
     padding: 20px !important;
     max-width: 100% !important;
-    top: 80px !important;
+    top: 40px !important;
     position: relative !important;
     text-align: center !important; /* Text ko center karne ke liye */
     display: flex !important;
@@ -1048,6 +1048,16 @@ body {
     font-size: 13px !important;
     text-align: center !important;
 }
+
+
+.category-card,
+    .category-card-2ndrow {
+        height: 900px;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 40px 0;
+    }
+
 }
 
 
@@ -1255,7 +1265,7 @@ body {
         transform: scale(0.99);
     }
     .middletext {
-        padding-top: 20px;
+        padding: 20px 0;
         background-color: transparent;
         height: 40px;
     }
@@ -1295,7 +1305,7 @@ body {
         margin-top: 750px;
     }
     .category-card h1, .category-card-2ndrow h1 {
-        font-size: 70px;
+        font-size: 55px;
     }
     .categories {
         padding-left: 20px;

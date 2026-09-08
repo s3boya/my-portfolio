@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         "55120": {
-            category: "Couture Collection",
+            category: "Summer Collection",
             title: "SOLARIS BLOOM",
             designer: "Designed by Lyra Sol",
             material: "Silver Crystal Mesh",
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         "54219": {
-            category: "Couture Collection",
+            category: "Summer Collection",
             title: "CERULEAN BREEZE",
             designer: "Designed by Kai Thorne",
             material: "Silver Crystal Mesh",
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         "53982": {
-            category: "Couture Collection",
+            category: "Summer Collection",
             title: "AMBER HORIZON",
             designer: "Designed by Elena Rostova",
             material: "Polyester-Spandex Blend",
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         "52843": {
-            category: "Couture Collection",
+            category: "Summer Collection",
             title: "IVORY OASIS",
             designer: "Designed by Soren Kael",
             material: "Polyester-Spandex Blend",
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         "53945": {
-            category: "Couture Collection",
+            category: "Summer Collection",
             title: "MIDNIGHT LACE",
             designer: "Designed by Élosie Marcell",
             material: "Polyester-Spandex Blend",

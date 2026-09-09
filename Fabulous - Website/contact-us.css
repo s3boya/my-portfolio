@@ -738,6 +738,7 @@ body {
     font-size: 14px;
     outline: none;
     transition: border 0.3s;
+    width: 100%;
 }
 .form-group select {
     padding-left: 10px;

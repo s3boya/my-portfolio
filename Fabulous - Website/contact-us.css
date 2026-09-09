@@ -689,7 +689,8 @@ body {
 }
 .info-item {
     display: flex;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 7px;
     margin-top: 25px;
 }
 .info-item span {
@@ -702,9 +703,11 @@ body {
     color: #222;
 }
 .info-item p {
+    padding: 4px 0;
     font-size: 13px;
     color: #666;
-    margin-top: 3px;
+    margin: 0;
+    text-align: left;
 }
 .form-row {
     display: flex;

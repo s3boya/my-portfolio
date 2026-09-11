@@ -681,7 +681,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let iti;
     if (phoneInput) {
         iti = window.intlTelInput(phoneInput, {
-            initialCountry: "auto",
+            initialCountry: "ps",
             geoIpLookup: function(callback) {
                 fetch("https://ipapi.co/json")
                     .then(res => res.json())

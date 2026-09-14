@@ -211,7 +211,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const productId = urlParams.get("id") || "64421";
     const baseProduct = productsDatabase[productId] || productsDatabase["64421"];
 
-    // Smart LocalStorage Sync: Code database stock takes priority unless manually overridden
     let allProducts = JSON.parse(localStorage.getItem('fabulous_products')) || {};
     let currentStock = baseProduct.stock;
 
@@ -232,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("prodTitle").textContent = currentProduct.title;
     document.getElementById("prodDesigner").textContent = currentProduct.designer;
     document.getElementById("prodMaterial").textContent = currentProduct.material;
-    
+
     const stockElement = document.getElementById("prodStock");
     const stockDot = document.getElementById("stockDot");
     const inquireBtn = document.getElementById("inquireBtn");
@@ -248,28 +247,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.getElementById("prodId").textContent = currentProduct.id;
-
-    // Global stock update function with Manual Override Flag
-    window.updateProductStock = function(targetId, newStockStatus) {
-        let storedProducts = JSON.parse(localStorage.getItem('fabulous_products')) || {};
-        if (!storedProducts[targetId]) {
-            storedProducts[targetId] = {};
-        }
-        storedProducts[targetId].stock = newStockStatus;
-        storedProducts[targetId].manualOverride = true;
-        localStorage.setItem('fabulous_products', JSON.stringify(storedProducts));
-
-        let wishlist = JSON.parse(localStorage.getItem('fabulous_wishlist')) || [];
-        let updatedWishlist = wishlist.map(item => {
-            if (item.id === targetId) {
-                return { ...item, stock: newStockStatus };
-            }
-            return item;
-        });
-        localStorage.setItem('fabulous_wishlist', JSON.stringify(updatedWishlist));
-        
-        console.log(`Stock for product ${targetId} successfully updated to: ${newStockStatus}`);
-    };
 
     // 5. Main Image & Magnifier Zoom Logic Setup
     const mainImg = document.getElementById("mainProductImg");
@@ -317,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- MAGNIFIER / ZOOM LENS INTERACTION ---
     function imageZoom() {
         if (!imgZoomContainer || !imgZoomLens || !mainImg) return;
-        
+
         imgZoomLens.style.display = "none";
 
         imgZoomContainer.addEventListener("mouseenter", () => {
@@ -342,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let maxW = imgZoomContainer.offsetWidth - imgZoomLens.offsetWidth;
             let maxH = imgZoomContainer.offsetHeight - imgZoomLens.offsetHeight;
-            
+
             if (x > maxW) { x = maxW; }
             if (x < 0) { x = 0; }
             if (y > maxH) { y = maxH; }
@@ -373,22 +350,62 @@ document.addEventListener("DOMContentLoaded", () => {
     // 6. Size Selection Logic
     const sizeBtns = document.querySelectorAll('.size-btn');
     let selectedSize = 'M';
-    
+
     sizeBtns.forEach(btn => {
-        if (btn.classList.contains('active')) selectedSize = btn.textContent;
+        if (btn.classList.contains('active')) {
+            selectedSize = btn.textContent.trim();
+        }
         btn.addEventListener('click', () => {
             sizeBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            selectedSize = btn.textContent;
+            selectedSize = btn.textContent.trim();
         });
     });
 
-    // 7. Buttons Interaction & Wishlist Dynamic Toggle Logic
+    // --- Inquire Button Click Event: saves data to localStorage, then goes to inquiry.html ---
     if (inquireBtn) {
-        inquireBtn.addEventListener("click", () => {
-            alert(`Inquiry submitted for ${currentProduct.title} (Size: ${selectedSize}). Our concierge team will contact you shortly.`);
+        inquireBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            let currentImgSrc = "";
+            if (currentProduct.images && currentProduct.images.length > 0) {
+                currentImgSrc = currentProduct.images[0];
+            } else if (mainImg) {
+                currentImgSrc = mainImg.getAttribute('src');
+            }
+
+            const inquiryData = {
+                id: currentProduct.id,
+                title: currentProduct.title,
+                size: selectedSize,
+                img: currentImgSrc
+            };
+
+            localStorage.setItem('fabulous_current_inquiry', JSON.stringify(inquiryData));
+
+            window.location.href = "inquiry.html";
         });
     }
+
+    // Global stock update function with Manual Override Flag
+    window.updateProductStock = function(targetId, newStockStatus) {
+        let storedProducts = JSON.parse(localStorage.getItem('fabulous_products')) || {};
+        if (!storedProducts[targetId]) {
+            storedProducts[targetId] = {};
+        }
+        storedProducts[targetId].stock = newStockStatus;
+        storedProducts[targetId].manualOverride = true;
+        localStorage.setItem('fabulous_products', JSON.stringify(storedProducts));
+
+        let wishlist = JSON.parse(localStorage.getItem('fabulous_wishlist')) || [];
+        let updatedWishlist = wishlist.map(item => {
+            if (item.id === targetId) {
+                return { ...item, stock: newStockStatus };
+            }
+            return item;
+        });
+        localStorage.setItem('fabulous_wishlist', JSON.stringify(updatedWishlist));
+    };
 
     const saveWishlistBtn = document.getElementById("saveWishlistBtn");
 
@@ -396,42 +413,37 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!saveWishlistBtn) return;
         let wishlist = JSON.parse(localStorage.getItem('fabulous_wishlist')) || [];
         const exists = wishlist.some(item => item.id === currentProduct.id);
-        
+
         if (exists) {
             saveWishlistBtn.textContent = "REMOVE FROM WISHLIST";
-            saveWishlistBtn.style.backgroundColor = "#111"; // Styling match karne ke liye
+            saveWishlistBtn.style.backgroundColor = "#111";
             saveWishlistBtn.style.color = "#fff";
         } else {
             saveWishlistBtn.textContent = "SAVE TO WISHLIST";
-            saveWishlistBtn.style.backgroundColor = ""; 
+            saveWishlistBtn.style.backgroundColor = "";
             saveWishlistBtn.style.color = "";
         }
     }
 
-    // Page load par check karein ke product wishlist mein hai ya nahi
     updateWishlistButtonState();
 
     if (saveWishlistBtn) {
         saveWishlistBtn.addEventListener("click", () => {
             let wishlist = JSON.parse(localStorage.getItem('fabulous_wishlist')) || [];
             const index = wishlist.findIndex(item => item.id === currentProduct.id);
-            
+
             if (index > -1) {
-                // Agar pehle se hai toh remove kar dein
                 wishlist.splice(index, 1);
                 localStorage.setItem('fabulous_wishlist', JSON.stringify(wishlist));
                 alert(`${currentProduct.title} has been removed from your Wishlist.`);
             } else {
-                // Agar nahi hai toh add kar dein
                 wishlist.push({ ...currentProduct, image: currentProduct.images[0], size: selectedSize, stock: currentStock });
                 localStorage.setItem('fabulous_wishlist', JSON.stringify(wishlist));
                 alert(`${currentProduct.title} has been added to your Wishlist!`);
             }
 
-            // Button text aur state ko foran update karein
             updateWishlistButtonState();
 
-            // Badge update trigger karein agar function maujood ho
             if (typeof updateWishlistBadge === 'function') {
                 updateWishlistBadge();
             }
@@ -439,17 +451,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// --- Announcement Slider Logic (Product Detail Page) ---
 document.addEventListener("DOMContentLoaded", () => {
-    // Yahan aap apne marzi ke jitne marzi texts add kar sakte hain
     const messages = [
         "Flat 30% OFF on New Arrivals | Shop Now",
-
         "Upgrade Your Wardrobe | Explore Winter Capsule",
-
         "Get 25% Discount | Become a Member",
-
         "Discover Exclusive Styles | Shop the Latest Drop",
-
         "Elegance Redefined | Check Out Our New Collection",
     ];
 
@@ -459,46 +467,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.getElementById("nextBtn");
     const sliderContainer = document.querySelector(".announcement-slider");
 
-    function updateText(index) {
-        textElement.style.opacity = 0;
-        setTimeout(() => {
-            textElement.textContent = messages[index];
-            textElement.style.opacity = 1;
-        }, 150);
+    if (textElement && prevBtn && nextBtn && sliderContainer) {
+        function updateText(index) {
+            textElement.style.opacity = 0;
+            setTimeout(() => {
+                textElement.textContent = messages[index];
+                textElement.style.opacity = 1;
+            }, 150);
+        }
+
+        function nextMessage() {
+            currentIndex = (currentIndex + 1) % messages.length;
+            updateText(currentIndex);
+        }
+
+        function prevMessage() {
+            currentIndex = (currentIndex - 1 + messages.length) % messages.length;
+            updateText(currentIndex);
+        }
+
+        nextBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            nextMessage();
+        });
+
+        prevBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            prevMessage();
+        });
+
+        let autoSlide = setInterval(nextMessage, 5000);
+
+        sliderContainer.addEventListener("mouseenter", () => clearInterval(autoSlide));
+        sliderContainer.addEventListener("mouseleave", () => {
+            autoSlide = setInterval(nextMessage, 5000);
+        });
     }
-
-    function nextMessage() {
-        currentIndex = (currentIndex + 1) % messages.length;
-        updateText(currentIndex);
-    }
-
-    function prevMessage() {
-        currentIndex = (currentIndex - 1 + messages.length) % messages.length;
-        updateText(currentIndex);
-    }
-
-    // Button Click Events
-    nextBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        nextMessage();
-    });
-
-    prevBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        prevMessage();
-    });
-
-    // Auto Slide every 5 seconds (5000ms)
-    let autoSlide = setInterval(nextMessage, 5000);
-
-    // Pause auto-slide when mouse enters the banner
-    sliderContainer.addEventListener("mouseenter", () => clearInterval(autoSlide));
-    sliderContainer.addEventListener("mouseleave", () => {
-        autoSlide = setInterval(nextMessage, 5000);
-    });
 });
 
-
+// --- Sidebar Menu Logic ---
 document.addEventListener("DOMContentLoaded", () => {
     const menuOpenBtn = document.getElementById("menuOpenBtn");
     const menuCloseBtn = document.getElementById("menuCloseBtn");
@@ -506,79 +513,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const sidebarOverlay = document.getElementById("sidebarOverlay");
 
     function openMenu() {
-        sidebarMenu.classList.add("active");
-        sidebarOverlay.classList.add("active");
-        document.body.style.overflow = "hidden"; // Background scroll disable karne ke liye
+        if (sidebarMenu) sidebarMenu.classList.add("active");
+        if (sidebarOverlay) sidebarOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
     }
 
     function closeMenu() {
-        sidebarMenu.classList.remove("active");
-        sidebarOverlay.classList.remove("active");
+        if (sidebarMenu) sidebarMenu.classList.remove("active");
+        if (sidebarOverlay) sidebarOverlay.classList.remove("active");
         document.body.style.overflow = "auto";
     }
 
-    menuOpenBtn.addEventListener("click", openMenu);
-    menuCloseBtn.addEventListener("click", closeMenu);
-    sidebarOverlay.addEventListener("click", closeMenu);
+    if (menuOpenBtn) menuOpenBtn.addEventListener("click", openMenu);
+    if (menuCloseBtn) menuCloseBtn.addEventListener("click", closeMenu);
+    if (sidebarOverlay) sidebarOverlay.addEventListener("click", closeMenu);
 });
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    updateBadgeDisplay();
-
-    // Sab "Add to Wishlist" buttons par event listener lagane ke liye
-    const wishlistButtons = document.querySelectorAll('.add-to-wishlist-btn'); // Apne button ki class yahan likh dena
-    
-    wishlistButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Current count nikalain localStorage se
-            let count = parseInt(localStorage.getItem('wishlistCount')) || 0;
-            count += 1;
-            
-            // New count save karein
-            localStorage.setItem('wishlistCount', count);
-
-            
-            
-            // Badge update karein
-            updateBadgeDisplay();
-            
-            // Optional: Button ka text ya style change karne ke liye
-            button.textContent = "Added to Wishlist";
-            button.disabled = true;
-        });
-    });
-});
-
-// Badge par count show karne aur animate karne ka function
+// --- Search & Wishlist Badge Helpers ---
 function updateBadgeDisplay() {
     const badge = document.querySelector('.wishlist-badge');
     if (!badge) return;
 
-    let count = parseInt(localStorage.getItem('wishlistCount')) || 0;
-    
+    const wishlist = JSON.parse(localStorage.getItem('fabulous_wishlist')) || [];
+    const count = wishlist.length;
+
     badge.textContent = count;
-    
+
     if (count > 0) {
+        badge.style.display = 'flex';
         badge.classList.remove('hidden');
-        // Chota sa pop animation jab count change ho
-        badge.style.transform = 'scale(1.3)';
-        setTimeout(() => {
-            badge.style.transform = 'scale(1)';
-        }, 200);
     } else {
+        badge.style.display = 'none';
         badge.classList.add('hidden');
     }
 }
 
+document.addEventListener('DOMContentLoaded', updateBadgeDisplay);
 
-
-
-
-
-// --- Complete Search Modal & Live Search Logic ---
+window.addEventListener('storage', (event) => {
+    if (event.key === 'fabulous_wishlist') {
+        updateBadgeDisplay();
+    }
+});
 
 const searchIconTrigger = document.querySelector('.nav-icon[title="Search"]');
 const searchModal = document.getElementById('searchModal');
@@ -587,8 +563,7 @@ const searchInputField = document.getElementById('searchInputField');
 const searchSubmitBtn = document.getElementById('searchSubmitBtn');
 const searchResultsContainer = document.getElementById('searchResultsContainer');
 
-// Store products ki list
-const storeProducts = [
+const storeProductsList = [
     { name: "New Couture Dress", category: "couture", url: "#" },
     { name: "Velvet Evening Gown", category: "gown", url: "#" },
     { name: "Summer Floral Maxi", category: "maxi", url: "#" },
@@ -596,10 +571,9 @@ const storeProducts = [
     { name: "Bridal White Suit", category: "bridal", url: "#" }
 ];
 
-let searchTimeout;
+let searchTimeoutRef;
 
-// 1. Open Modal when Search Icon is clicked
-if (searchIconTrigger) {
+if (searchIconTrigger && searchModal && searchInputField) {
     searchIconTrigger.addEventListener('click', (e) => {
         e.preventDefault();
         searchModal.classList.add('active');
@@ -607,27 +581,16 @@ if (searchIconTrigger) {
     });
 }
 
-// 2. Close Modal on Cross Button click
-if (closeSearchBtn) {
+if (closeSearchBtn && searchModal && searchInputField && searchResultsContainer) {
     closeSearchBtn.addEventListener('click', () => {
         searchModal.classList.remove('active');
-        // Modal band hone par input aur results bhi clear kar dein
         searchInputField.value = "";
         searchResultsContainer.innerHTML = "";
     });
 }
 
-// 3. Close Modal when clicking outside the modal box
-window.addEventListener('click', (e) => {
-    if (e.target === searchModal) {
-        searchModal.classList.remove('active');
-        searchInputField.value = "";
-        searchResultsContainer.innerHTML = "";
-    }
-});
-
-// 4. Live Search & 3-Dots Animation Function
 function performLiveSearch() {
+    if (!searchInputField || !searchResultsContainer) return;
     const query = searchInputField.value.toLowerCase().trim();
 
     if (query === "") {
@@ -635,7 +598,6 @@ function performLiveSearch() {
         return;
     }
 
-    // Pehle 3-dots loading animation show ho
     searchResultsContainer.innerHTML = `
         <div class="search-loading">
             <span></span>
@@ -644,11 +606,10 @@ function performLiveSearch() {
         </div>
     `;
 
-    // 300ms delay ke baad results filter hokar samne ayen
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => {
-        const matchedProducts = storeProducts.filter(product => 
-            product.name.toLowerCase().includes(query) || 
+    clearTimeout(searchTimeoutRef);
+    searchTimeoutRef = setTimeout(() => {
+        const matchedProducts = storeProductsList.filter(product =>
+            product.name.toLowerCase().includes(query) ||
             product.category.toLowerCase().includes(query)
         );
 
@@ -667,101 +628,23 @@ function performLiveSearch() {
     }, 1000);
 }
 
-// 5. Event Listeners for Typing & Clicking
 if (searchInputField) {
     searchInputField.addEventListener('input', performLiveSearch);
 }
 
-if (searchSubmitBtn) {
-    searchSubmitBtn.addEventListener('click', performLiveSearch);
-}
-
-
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const toTopBtn = document.getElementById('toTopBtn');
-    const footer = document.querySelector('.site-footer');
-
-    if (toTopBtn && footer) {
-        window.addEventListener('scroll', function() {
-            const footerRect = footer.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            // Jab user footer ke bilkul kareeb/end tak pahuche
-            if (footerRect.top <= windowHeight - 80 && footerRect.bottom >= windowHeight / 4) {
-                toTopBtn.classList.add('show');
-            } else {
-                toTopBtn.classList.remove('show');
-            }
-        });
-
-        // Smooth scroll to top on click
-        toTopBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-});
-
-
-// --- Wishlist Badge Auto Updater for Home Page ---
-
-function updateWishlistBadge() {
-    const badge = document.querySelector('.wishlist-badge');
-    if (!badge) return;
-
-    // 'fabulous_wishlist' key se array parse karein
-    const wishlist = JSON.parse(localStorage.getItem('fabulous_wishlist')) || [];
-    const count = wishlist.length;
-
-    badge.textContent = count;
-    
-    if (count > 0) {
-        badge.style.display = 'flex';
-    } else {
-        badge.style.display = 'none'; // Agar 0 ho toh hide rahe
-    }
-}
-
-// Page load hotay hi badge update ho jaye
-document.addEventListener('DOMContentLoaded', updateWishlistBadge);
-
-// Agar kisi aur tab ya page par wishlist update ho, toh home page par bhi foran sync ho jaye
-window.addEventListener('storage', (event) => {
-    if (event.key === 'fabulous_wishlist') {
-        updateWishlistBadge();
-    }
-});
-
-
-
-
-
 function redirectToCatalog() {
     if (!searchInputField) return;
     const query = searchInputField.value.trim();
-    
-    // Agar input khali na ho toh naye search/catalog page par bhej dein
+
     if (query !== "") {
         window.location.href = `shop-search.html?search=${encodeURIComponent(query)}`;
     }
 }
 
-// 1. Search button click karne par
 if (searchSubmitBtn) {
     searchSubmitBtn.addEventListener('click', redirectToCatalog);
 }
 
-// 2. Input field mein Enter press karne par
 if (searchInputField) {
     searchInputField.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {

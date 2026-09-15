@@ -96,9 +96,6 @@
     </div>
 </div>
         
-            
-
-            </a>
             <div class="nav-icons">
 
 <a href="#" class="nav-icon" title="Search" >
@@ -110,7 +107,6 @@
 
                 <a href="wishlist-products.html" class="nav-icon" id="second-child" title="Wishlist" style="position: relative; ">
     <img width="30" height="30" src="https://img.icons8.com/ios/50/shopping-cart--v1.png" alt="shopping-cart--v1"/>
-    <!-- Yeh style laga kar check karo -->
     <span class="wishlist-badge" style="display: flex !important; font-size: 14px !important; width: 20px !important; height: 20px !important; position: absolute; top: -4px; left: 20px; z-index: 9999;"></span>
 </a>
             </a>
@@ -151,9 +147,7 @@
             
             <!-- Left Side: Dynamic Product Preview Box -->
             <div class="product-preview-card">
-                <!-- <h3>PREVIEW</h3> -->
                 <div class="preview-img-box">
-                    
                     <img id="preview-img" src="" alt="Product Preview">
                 </div>
                 <div class="preview-details">
@@ -162,7 +156,7 @@
                 </div>
             </div>
 
-            <!-- Right Side: Inquiry Form -->
+            <!-- Right Side: Inquiry Form with Side-by-Side Grid -->
             <div class="inquiry-form-card">
                 <div class="form-info">
                     <h2>INQUIRE ABOUT THIS PIECE</h2>
@@ -173,21 +167,36 @@
                 <p class="form-subtext">Fill out your details below and our concierge team will get back to you</p>
                 
                 <form id="inquiryForm">
-                    <div class="form-group">
-                        <label for="custName">Full Name</label>
-                        <input type="text" id="custName" placeholder="Enter your full name" required>
+                    <!-- Row 1: Full Name & Email Address -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="custName">Full Name</label>
+                            <input type="text" id="custName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="custEmail">Email Address</label>
+                            <input type="email" id="custEmail" placeholder="example@gmail.com" required>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="custEmail">Email Address</label>
-                        <input type="email" id="custEmail" placeholder="example@gmail.com" required>
+                    <!-- Row 2: Phone Number & Inquiry Subject / Options -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phoneNum">Phone Number</label>
+                            <input type="tel" id="phoneNum" required>
+                        </div>
+                        <div class="form-group">
+    <label for="contactPreference">Contact Method</label>
+    <select id="contactPreference" class="form-control" required style="width: 100%; box-sizing: border-box;">
+        <option value="" disabled selected>Select</option>
+        <option value="WhatsApp">WhatsApp</option>
+        <option value="Phone Call">Phone Call</option>
+        <option value="Email">Email</option>
+    </select>
+</div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="custPhone">Phone Number</label>
-                        <input type="tel" id="phoneNum" required>
-                    </div>
-
+                    <!-- Row 3: Requirements / Message -->
                     <div class="form-group">
                         <label for="custMessage">Requirements</label>
                         <textarea id="custMessage" rows="4" placeholder="Mention any specific adjustments or questions..."></textarea>
@@ -199,9 +208,6 @@
 
         </div>
     </main>
-
-
-
 
 <!-- Professional Footer -->
     <footer class="site-footer">

@@ -1,40 +1,77 @@
 document.addEventListener("DOMContentLoaded", () => {
     const inquiryData = JSON.parse(localStorage.getItem('fabulous_current_inquiry')) || {};
-
+ 
     const previewTitle = document.getElementById('preview-title');
     const previewSize = document.getElementById('preview-size');
     const previewImg = document.getElementById('preview-img');
-
+ 
     if (previewTitle) {
         previewTitle.textContent = inquiryData.title || 'Product';
     }
-
+ 
     if (previewSize) {
         previewSize.textContent = inquiryData.size || 'M';
     }
-
+ 
     if (previewImg && inquiryData.img) {
         previewImg.src = inquiryData.img;
     }
-
+ 
     const inquiryForm = document.getElementById('inquiryForm');
     if (inquiryForm) {
         inquiryForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const nameField = document.getElementById('custName');
             const name = nameField ? nameField.value : 'Valued Client';
-
+ 
             const finalTitle = inquiryData.title || 'this piece';
             const finalSize = inquiryData.size || 'N/A';
             const finalId = inquiryData.id || 'N/A';
-
-            alert(`Thank you ${name}! Your inquiry for ${finalTitle} (ID: ${finalId}, Size: ${finalSize}) has been submitted successfully. Our concierge team will contact you shortly.`);
-
+ 
+            showToast(`Thank you ${name}! <br>Our concierge team will contact you shortly.`);
+ 
             localStorage.removeItem('fabulous_current_inquiry');
-            window.location.href = 'home.html';
+ 
+            // Toast 5 second dikhega, uske baad home page par redirect hoga
+            setTimeout(() => {
+                window.location.href = 'home.html';
+            }, 5000);
         });
     }
 });
+ 
+// --- Custom Toast/Modal Notification (alert() ki jagah, search modal jaisa look) ---
+function showToast(message) {
+    // Agar pehle se koi toast dikha hua hai, usko hata do
+    const existingToast = document.querySelector('.fabulous-toast-overlay');
+    if (existingToast) {
+        existingToast.remove();
+    }
+ 
+    const overlay = document.createElement('div');
+    overlay.className = 'fabulous-toast-overlay';
+    overlay.innerHTML = `
+        <div class="fabulous-toast-box">
+            <div class="fabulous-toast-icon">&#10003;</div>
+            <h2 class="fabulous-toast-title">Inquiry Submitted!</h2>
+            <p class="fabulous-toast-message">${message}</p>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+ 
+    // Thodi der baad "active" class add karo taake fade+blur animation chale
+    requestAnimationFrame(() => {
+        overlay.classList.add('active');
+    });
+ 
+    // 5 second baad fade-out karo, phir DOM se hata do
+    setTimeout(() => {
+        overlay.classList.remove('active');
+        setTimeout(() => {
+            overlay.remove();
+        }, 400);
+    }, 5000);
+}
 
 // --- Announcement Slider Logic ---
 document.addEventListener("DOMContentLoaded", () => {

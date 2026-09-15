@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             localStorage.setItem('fabulous_current_inquiry', JSON.stringify(inquiryData));
 
-            window.location.href = "inquiry.html";
+            window.location.href = "inquiry.html?id=" + currentProduct.id;
         });
     }
 

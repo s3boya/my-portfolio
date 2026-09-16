@@ -232,6 +232,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("prodDesigner").textContent = currentProduct.designer;
     document.getElementById("prodMaterial").textContent = currentProduct.material;
 
+    // --- Dynamic Title Update ---
+    document.setTitle = `${currentProduct.title} — ${currentProduct.category} | FABULOUS`; // Error se bachne ke liye direct document.title use karo:
+    document.title = `${currentProduct.title} — ${currentProduct.category} | FABULOUS`;
+
     const stockElement = document.getElementById("prodStock");
     const stockDot = document.getElementById("stockDot");
     const inquireBtn = document.getElementById("inquireBtn");
@@ -362,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- Inquire Button Click Event: saves data to localStorage, then goes to inquiry.html ---
+    // --- Inquire Button Click Event ---
     if (inquireBtn) {
         inquireBtn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -382,7 +386,6 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             localStorage.setItem('fabulous_current_inquiry', JSON.stringify(inquiryData));
-
             window.location.href = "inquiry.html?id=" + currentProduct.id;
         });
     }
@@ -427,19 +430,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateWishlistButtonState();
 
+    // --- Modern Toast Notification Injector & Logic ---
+    if (!document.getElementById('wishlistToastContainer')) {
+        const toastContainerHTML = `<div id="wishlistToastContainer" class="wishlist-toast-container"></div>`;
+        document.body.insertAdjacentHTML('beforeend', toastContainerHTML);
+    }
+
+    const toastContainer = document.getElementById('wishlistToastContainer');
+
+    function showWishlistToast(type, title, imgSrc) {
+        const toast = document.createElement('div');
+        const isAdd = type === 'add';
+        
+        toast.className = `wishlist-toast ${isAdd ? 'success' : 'remove'}`;
+        toast.innerHTML = `
+            <img src="${imgSrc}" alt="Product">
+            <div class="wishlist-toast-content">
+                <span class="wishlist-toast-title">${isAdd ? 'Added to Wishlist' : 'Removed from Wishlist'}</span>
+                <span class="wishlist-toast-desc">${title}</span>
+            </div>
+        `;
+
+        toastContainer.appendChild(toast);
+
+        // Slide in
+        setTimeout(() => {
+            toast.classList.add('active');
+        }, 50);
+
+        // Slide out and remove after 2.5 seconds
+        setTimeout(() => {
+            toast.classList.remove('active');
+            setTimeout(() => {
+                toast.remove();
+            }, 400);
+        }, 2500);
+    }
+
     if (saveWishlistBtn) {
         saveWishlistBtn.addEventListener("click", () => {
             let wishlist = JSON.parse(localStorage.getItem('fabulous_wishlist')) || [];
             const index = wishlist.findIndex(item => item.id === currentProduct.id);
+            let productImg = currentProduct.images && currentProduct.images.length > 0 ? currentProduct.images[0] : '';
 
             if (index > -1) {
                 wishlist.splice(index, 1);
                 localStorage.setItem('fabulous_wishlist', JSON.stringify(wishlist));
-                alert(`${currentProduct.title} has been removed from your Wishlist.`);
+                showWishlistToast('remove', currentProduct.title, productImg);
             } else {
-                wishlist.push({ ...currentProduct, image: currentProduct.images[0], size: selectedSize, stock: currentStock });
+                wishlist.push({ ...currentProduct, image: productImg, size: selectedSize, stock: currentStock });
                 localStorage.setItem('fabulous_wishlist', JSON.stringify(wishlist));
-                alert(`${currentProduct.title} has been added to your Wishlist!`);
+                showWishlistToast('add', currentProduct.title, productImg);
             }
 
             updateWishlistButtonState();

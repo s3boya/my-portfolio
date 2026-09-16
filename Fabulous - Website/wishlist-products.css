@@ -631,6 +631,7 @@ body {
     margin: 40px auto;
     padding: 0 50px;
     min-height: 50vh;
+    padding-bottom: 50px;
 }
 
 .wishlist-container h1 {

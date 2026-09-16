@@ -21,6 +21,22 @@ body {
     overflow-x: hidden;
 }
 
+/* --- Global Container Stability for Zoom & Scaling --- */
+.footer-content,
+.footer-bottom {
+    max-width: clamp(300px, 90%, 1200px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Categories grid ko zoom-proof aur stable banane ke liye */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    width: 100%;
+}
+
 .black-header {
     background-color: #181717;
     color: #ffffff;
@@ -645,15 +661,15 @@ body {
     
 }
 .hero-content {
-    min-height: 60vh;
+    min-height: 65vh;
     position: relative;
     z-index: 2;
     background: transparent;
     /* backdrop-filter: blur(1px); */
-    padding-left: 100px;
+    padding-left: 50px;
     padding-right: 50px;
     text-align: left;
-    transform: scale(1.25);
+    /* transform: scale(1.25); */
     border-radius: 100px;
     max-width: 680px;
 }
@@ -720,7 +736,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    transform: scale(1.25);
+    /* transform: scale(1.25); */
 }
 .second-hero-content h1 {
     margin: 10px 0;
@@ -887,7 +903,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    transform: scale(1.25);
+    /* transform: scale(1.25); */
 }
 .third-hero-content h1 {
     letter-spacing: 3px;

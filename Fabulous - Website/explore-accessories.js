@@ -390,3 +390,31 @@ if (searchInputField) {
         }
     });
 }
+
+
+// --- Category & Section Dynamic Title Manager ---
+document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname.toLowerCase();
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryQuery = urlParams.get("category") || urlParams.get("section");
+
+    // Agar URL mein koi specific category pass ho rahi hai
+    if (categoryQuery) {
+        const cleanCategory = categoryQuery.charAt(0).toUpperCase() + categoryQuery.slice(1);
+        document.title = `${cleanCategory} Collection — FABULOUS`;
+        return;
+    }
+
+    // Static page/section paths ke mutabiq unique titles
+    if (path.includes("couture")) {
+        document.title = `High Couture Atelier & Bespoke — FABULOUS`;
+    } else if (path.includes("runway")) {
+        document.title = `Runway Collections & Lookbooks — FABULOUS`;
+    } else if (path.includes("essentials")) {
+        document.title = `The Essentials & Staples — FABULOUS`;
+    } else if (path.includes("accessories")) {
+        document.title = `Luxury Accessories & Details | FABULOUS`;
+    } else if (path.includes("streetwear")) {
+        document.title = `Urban Streetwear & Editions — FABULOUS`;
+    }
+});

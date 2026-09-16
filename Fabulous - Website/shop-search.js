@@ -724,3 +724,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get("search");
+    const searchHeading = document.getElementById("searchQueryResultTitle");
+    const searchInput = document.querySelector("input[type='text']");
+
+    if (searchQuery) {
+        // Unique browser tab title
+        document.title = `Results for "${searchQuery}" — Archival Lookbook | FABULOUS`;
+
+        // Page ke andar heading ko "Results for 'gown'" jaisa banana
+        if (searchHeading) {
+            searchHeading.textContent = `Results for "${searchQuery}"`;
+        }
+
+        // Input field mein value set rakhna
+        if (searchInput) {
+            searchInput.value = searchQuery;
+        }
+    } else {
+        if (searchHeading) {
+            searchHeading.textContent = `Search The Archive`;
+        }
+    }
+});

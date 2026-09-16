@@ -334,3 +334,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+// --- Specific Product Inquiry Page Dynamic Title Manager ---
+document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname.toLowerCase();
+    const urlParams = new URLSearchParams(window.location.search);
+    const inquiryId = urlParams.get("id");
+
+    // Agar user inquiry page par hai
+    if (path.includes("inquiry") || inquiryId) {
+        setTimeout(() => {
+            // Page par diye gaye product title element ko target karna (jaise "AMBER HORIZON")
+            const productTitleNode = document.querySelector(".policy-container h2, h2, .product-name");
+            let productName = productTitleNode ? productTitleNode.textContent.trim() : "Bespoke Piece";
+            
+            // Luxury editorial style title set karna
+            document.title = `Inquiring Details for "${productName}" | FABULOUS`;
+        }, 100); // DOM fully render hone ke baad text uthane ke liye chota sa delay
+    }
+});

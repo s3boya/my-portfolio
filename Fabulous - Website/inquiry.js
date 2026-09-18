@@ -354,3 +354,65 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 100); // DOM fully render hone ke baad text uthane ke liye chota sa delay
     }
 });
+
+
+// --- Zoom Lock Script (Fixed Version) ---
+// Website ka visual zoom 90% se 100% ke darmiyan clamp (limit) karta hai.
+// Browser ke asal zoom level ko "devicePixelRatio" se detect karte hain,
+// aur uske against ek "compensation factor" apply karte hain taake
+// final visual result hamesha 90%-100% ke andar rahe.
+
+(function () {
+    const MIN_ZOOM = 90;   // Isse neeche visually zoom nahi hoga
+    const MAX_ZOOM = 100;  // Isse upar visually zoom nahi hoga
+
+    // Baseline: page load hote waqt ka devicePixelRatio "100% zoom" maana jata hai.
+    // Note: agar page reload hua jab browser pehle se zoomed tha, toh baseline
+    // wahi bann jayega "naya 100%" — yeh ek known limitation hai, lekin practical
+    // use ke liye theek kaam karta hai.
+    const baselineDPR = window.devicePixelRatio || 1;
+
+    function getBrowserZoomPercent() {
+        const currentDPR = window.devicePixelRatio || 1;
+        return Math.round((currentDPR / baselineDPR) * 100);
+    }
+
+    function clearCompensation() {
+        document.body.style.zoom = "";
+        document.body.style.transform = "";
+        document.body.style.transformOrigin = "";
+        document.body.style.width = "";
+    }
+
+    function applyZoomClamp() {
+        const rawZoom = getBrowserZoomPercent();
+        let targetZoom = rawZoom;
+
+        if (rawZoom < MIN_ZOOM) {
+            targetZoom = MIN_ZOOM;
+        } else if (rawZoom > MAX_ZOOM) {
+            targetZoom = MAX_ZOOM;
+        } else {
+            // Zoom already limit ke andar hai, koi compensation nahi chahiye
+            clearCompensation();
+            return;
+        }
+
+        // Yeh asal fix hai: seedha targetZoom set nahi karte,
+        // balke ek "compensation factor" nikaal kar apply karte hain
+        // taake (browser ka zoom) x (compensation) = targetZoom ho jaye.
+        const compensation = (targetZoom / rawZoom) * 100;
+
+        document.body.style.zoom = `${compensation}%`;
+    }
+
+    // Debounce taake resize/zoom event bar bar fire na ho
+    let debounceTimer;
+    function debouncedZoomCheck() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(applyZoomClamp, 120);
+    }
+
+    window.addEventListener('resize', debouncedZoomCheck);
+    document.addEventListener('DOMContentLoaded', applyZoomClamp);
+})();

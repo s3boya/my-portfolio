@@ -661,15 +661,15 @@ body {
     
 }
 .hero-content {
-    min-height: 65vh;
+    min-height: 62vh;
     position: relative;
     z-index: 2;
     background: transparent;
     /* backdrop-filter: blur(1px); */
-    padding-left: 50px;
+    padding-left: 100px;
     padding-right: 50px;
     text-align: left;
-    /* transform: scale(1.25); */
+    transform: scale(1.25);
     border-radius: 100px;
     max-width: 680px;
 }
@@ -736,7 +736,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    /* transform: scale(1.25); */
+    transform: scale(1.25);
 }
 .second-hero-content h1 {
     margin: 10px 0;
@@ -903,7 +903,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    /* transform: scale(1.25); */
+    transform: scale(1.25);
 }
 .third-hero-content h1 {
     letter-spacing: 3px;

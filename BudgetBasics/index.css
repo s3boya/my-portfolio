@@ -14,7 +14,6 @@
    HIDE SCROLLBAR TRACK
 ========================================================= */
 
-/* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -28,7 +27,6 @@
     border-radius: 10px;
 }
 
-/* Firefox */
 html {
     scrollbar-color: #999 transparent;
     scrollbar-width: thin;
@@ -46,12 +44,13 @@ html {
   width: 100%;
   background: #ffffff;
   z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .navbar {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5px 20px;
+  padding: 15px 20px;
 
   display: flex;
   justify-content: space-between;
@@ -68,7 +67,6 @@ html {
   align-items: center;
 }
 
-/* Full BudgetBasics logo - Desktop */
 .desktop-logo {
   width: 230px;
   height: auto;
@@ -76,11 +74,10 @@ html {
   margin-top: 5px;
 }
 
-/* B! logo - Mobile */
 .mobile-logo {
   display: none;
-  width: 42px;
-  height: 42px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 
@@ -181,41 +178,31 @@ html {
 
 /* =========================================================
    SIDEBAR
-   Slides in from RIGHT
 ========================================================= */
 
 .sidebar-menu {
   position: fixed;
 
   top: 0;
-
-  /* Hidden on the right */
   right: -320px;
-
-  left: auto;
 
   width: 300px;
   height: 100%;
 
   background-color: #ffffff;
 
-  /* Shadow on left side */
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  /* Right-side animation */
   transition: right 0.35s cubic-bezier(0.77, 0, 0.175, 1);
 
   z-index: 1002;
 
   padding: 25px 20px;
 }
-
-
-/* Sidebar Open */
 
 .sidebar-menu.active {
   right: 0;
@@ -247,9 +234,6 @@ html {
   color: #333;
 }
 
-
-/* Close X */
-
 .close-btn {
   font-size: 32px;
 
@@ -275,12 +259,6 @@ html {
   flex-grow: 1;
 
   overflow-y: auto;
-}
-
-.sidebar-links li {
-  /* Optional border:
-  border-bottom: 1px solid #f2f2f2;
-  */
 }
 
 .sidebar-links a {
@@ -325,9 +303,6 @@ html {
   text-align: center;
 }
 
-
-/* Social Icons */
-
 .social-icons {
   display: flex;
 
@@ -345,9 +320,6 @@ html {
   color: rgba(0, 0, 0, 0.904);
 }
 
-
-/* Slogan */
-
 .slogan {
   padding-top: 15px;
 
@@ -360,30 +332,23 @@ html {
 
 
 /* =========================================================
-   MOBILE RESPONSIVE
+   MOBILE RESPONSIVE NAVBAR
 ========================================================= */
 
 @media (max-width: 1100px) {
 
-  /* Hide desktop navigation */
   .nav-links {
     display: none;
   }
 
-
-  /* Show hamburger */
   .menu-toggle {
     display: flex;
   }
 
-
-  /* Hide full BudgetBasics logo */
   .desktop-logo {
     display: none;
   }
 
-
-  /* Show B! logo */
   .mobile-logo {
     display: block;
 
@@ -394,10 +359,8 @@ html {
 }
 
 
-
-
 /* =========================================================
-   BUDGETBASICS HERO SECTION
+   HERO SECTION
 ========================================================= */
 
 .hero {
@@ -415,9 +378,6 @@ html {
     text-align: center;
 }
 
-
-/* Hero Content */
-
 .hero-content {
     padding: 20px;
     width: 100%;
@@ -427,9 +387,6 @@ html {
     flex-direction: column;
     align-items: center;
 }
-
-
-/* Main Heading */
 
 .hero h1 {
     margin: 0;
@@ -445,9 +402,6 @@ html {
     letter-spacing: -4px;
 }
 
-
-/* Description */
-
 .hero-description {
     max-width: 660px;
 
@@ -462,9 +416,6 @@ html {
     font-weight: 600;
 }
 
-
-/* Buttons Container */
-
 .hero-buttons {
     display: flex;
 
@@ -475,9 +426,6 @@ html {
 
     gap: 4px;
 }
-
-
-/* Yellow Buttons */
 
 .hero-btn {
     display: flex;
@@ -508,29 +456,21 @@ html {
         background 0.2s ease;
 }
 
-
 .hero-btn:hover {
     background: #ffca1a;
 
     transform: translateY(-2px);
 }
 
-
-/* Make the two buttons look connected */
-
 .hero-btn:first-child {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-
 .hero-btn:last-child {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-
-
-/* Blue Secondary Link */
 
 .hero-link {
     display: inline-block;
@@ -550,13 +490,9 @@ html {
     transition: color 0.2s ease;
 }
 
-
 .hero-link:hover {
     color: #004dcc;
 }
-
-
-/* Bottom Text */
 
 .hero-bottom-text {
     margin-top: 28px;
@@ -568,13 +504,11 @@ html {
     line-height: 1.45;
 }
 
-
 .hero-bottom-text p {
     margin: 0;
 
     font-weight: 600;
 }
-
 
 .hero-bottom-text span {
     display: block;
@@ -586,7 +520,7 @@ html {
 
 
 /* =========================================================
-   TABLET
+   HERO TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
@@ -604,11 +538,12 @@ html {
         font-size: 22px;
         max-width: 650px;
     }
+
 }
 
 
 /* =========================================================
-   MOBILE
+   HERO MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -620,7 +555,6 @@ html {
             85px 18px 40px;
     }
 
-
     .hero h1 {
         font-size: clamp(43px, 13vw, 65px);
 
@@ -628,8 +562,6 @@ html {
 
         letter-spacing: -2.5px;
     }
-    
-
 
     .hero-description {
         max-width: 430px;
@@ -641,7 +573,6 @@ html {
         line-height: 1.35;
     }
 
-
     .hero-buttons {
         width: 100%;
 
@@ -651,7 +582,6 @@ html {
 
         gap: 10px;
     }
-
 
     .hero-btn {
         width: min(300px, 90%);
@@ -665,13 +595,11 @@ html {
         font-size: 16px;
     }
 
-
     .hero-link {
         margin-top: 24px;
 
         font-size: 16px;
     }
-
 
     .hero-bottom-text {
         margin-top: 25px;
@@ -680,6 +608,7 @@ html {
 
         max-width: 330px;
     }
+
 }
 
 
@@ -693,15 +622,16 @@ html {
     padding: 20px 20px 90px;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
     background: #ffffff;
 }
 
-
 .video-container {
     width: 100%;
+
     max-width: 1050px;
 
     position: relative;
@@ -713,11 +643,11 @@ html {
     background: #f3f1ef;
 }
 
-
 .budget-video {
     display: block;
 
     width: 100%;
+
     height: auto;
 
     aspect-ratio: 16 / 9;
@@ -740,6 +670,7 @@ html {
     height: 30px;
 
     border: none;
+
     border-radius: 50%;
 
     background: #100e1483;
@@ -747,6 +678,7 @@ html {
     color: #ffffff;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -761,9 +693,6 @@ html {
         background 0.2s ease;
 }
 
-
-/* Pause icon */
-
 .pause-icon {
     font-size: 18px;
 
@@ -776,9 +705,6 @@ html {
     margin-left: -2px;
 }
 
-
-/* Play icon */
-
 .play-icon {
     display: none;
 
@@ -789,13 +715,9 @@ html {
     margin-left: 2px;
 }
 
-
-/* When video is paused */
-
 .video-toggle.paused .pause-icon {
     display: none;
 }
-
 
 .video-toggle.paused .play-icon {
     display: block;
@@ -803,7 +725,7 @@ html {
 
 
 /* =========================================================
-   MOBILE
+   VIDEO MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -812,11 +734,9 @@ html {
         padding: 0px 15px 60px;
     }
 
-
     .video-container {
         border-radius: 15px;
     }
-
 
     .video-toggle {
         top: 10px;
@@ -826,11 +746,9 @@ html {
         height: 36px;
     }
 
-
     .pause-icon {
         font-size: 18px;
     }
-
 
     .play-icon {
         font-size: 18px;
@@ -840,11 +758,12 @@ html {
 
 
 /* =========================================================
-   BUDGETBASICS INTRO / FEATURES
+   FINANCIAL LITERACY / FOUR PRINCIPLES
 ========================================================= */
 
 .financial-literacy {
     width: 100%;
+
     max-width: 1000px;
 
     margin: 0 auto;
@@ -854,20 +773,15 @@ html {
     text-align: center;
 }
 
-
-/* Main heading */
-
 .financial-literacy h2 {
     margin: 0;
 
     font-size: 28px;
+
     font-weight: 700;
 
     color: #111;
 }
-
-
-/* Intro paragraph */
 
 .literacy-intro {
     max-width: 700px;
@@ -875,13 +789,11 @@ html {
     margin: 18px auto 45px;
 
     font-size: 17px;
+
     line-height: 1.55;
 
     color: #333;
 }
-
-
-/* Four-column layout */
 
 .literacy-grid {
     display: grid;
@@ -893,28 +805,21 @@ html {
     text-align: left;
 }
 
-
-/* Individual card */
-
 .literacy-card {
     padding-top: 0;
+
     text-align: center;
 }
 
-
-/* Small line above every card */
-
 .literacy-line {
     width: 100%;
+
     height: 2px;
 
     background: #dedede;
 
     margin-bottom: 25px;
 }
-
-
-/* Small category */
 
 .literacy-label {
     display: block;
@@ -926,9 +831,6 @@ html {
     margin-bottom: 8px;
 }
 
-
-/* Card heading */
-
 .literacy-card h3 {
     margin: 0 0 10px;
 
@@ -938,9 +840,6 @@ html {
 
     color: #111;
 }
-
-
-/* Card description */
 
 .literacy-card p {
     margin: 0;
@@ -1005,14 +904,16 @@ html {
 
 /* =========================================================
    CONTACT US SECTION
-   ========================================================= */
+========================================================= */
 
 .contact-section {
     position: relative;
+
     width: 100%;
+
     min-height: 900px;
 
-    background: #086BFF;
+    background: #086bffd0;
 
     overflow: hidden;
 
@@ -1021,12 +922,13 @@ html {
     box-sizing: border-box;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
 
 
-/* ================= TOP CURVE ================= */
+/* TOP CURVE */
 
 .contact-section::before {
     content: "";
@@ -1047,7 +949,7 @@ html {
 }
 
 
-/* ================= BOTTOM CURVE ================= */
+/* BOTTOM CURVE */
 
 .contact-section::after {
     content: "";
@@ -1068,20 +970,19 @@ html {
 }
 
 
-/* ================= CONTENT ================= */
+/* CONTENT */
 
 .contact-content {
     position: relative;
+
     z-index: 5;
 
     width: 100%;
+
     max-width: 1100px;
 
     text-align: center;
 }
-
-
-/* ================= HEADING ================= */
 
 .contact-content h2 {
     margin: 0 auto 35px;
@@ -1091,14 +992,13 @@ html {
     color: #ffffff;
 
     font-size: 72px;
+
     line-height: 0.98;
+
     font-weight: 800;
 
     letter-spacing: -2px;
 }
-
-
-/* ================= DESCRIPTION ================= */
 
 .contact-content p {
     margin: 0 auto 45px;
@@ -1108,11 +1008,9 @@ html {
     color: #ffffff;
 
     font-size: 18px;
+
     line-height: 1.5;
 }
-
-
-/* ================= BUTTON ================= */
 
 .contact-section .contact-button {
     display: inline-flex !important;
@@ -1121,26 +1019,30 @@ html {
     justify-content: center;
 
     min-width: 145px;
+
     height: 48px;
 
     padding: 0 50px !important;
 
     background: #FFC400 !important;
+
     color: #000000 !important;
 
     border: none !important;
+
     border-radius: 999px;
 
     text-decoration: none !important;
 
     font-size: 18px;
+
     font-weight: 700;
 
     cursor: pointer;
 }
 
 
-/* ================= MOBILE ================= */
+/* CONTACT MOBILE */
 
 @media (max-width: 768px) {
 
@@ -1152,172 +1054,239 @@ html {
 
     .contact-section::before {
         top: -210px;
+
         left: -25%;
 
         width: 150%;
+
         height: 400px;
     }
 
     .contact-section::after {
         bottom: -230px;
+
         left: -25%;
 
         width: 150%;
+
         height: 420px;
     }
 
     .contact-content h2 {
         font-size: 46px;
+
         line-height: 1.25;
     }
 
     .contact-content p {
         font-size: 14px;
+
         line-height: 1.65;
+
         max-width: 450px;
     }
+
 }
 
 
 /* =========================================================
-   BUDGETING BASICS SECTION
-   ========================================================= */
+   PRINCIPLE 01
+   BUDGETING BASICS
+========================================================= */
 
 .budgeting-basics-section {
     width: 100%;
-    padding-bottom: 50px;
-    padding-left: 7%;
-    padding-right: 7%;
+
+    padding: 120px 7%;
+
     background: #ffffff;
+
     box-sizing: border-box;
 }
 
 .budgeting-basics-container {
     max-width: 1200px;
+
     margin: 0 auto;
 
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     align-items: center;
+
     gap: 80px;
 }
 
 
-/* =========================
-   LEFT IMAGE
-   ========================= */
+/* IMAGE */
 
 .budgeting-basics-image {
     width: 100%;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 }
 
 .budgeting-basics-image img {
     width: 100%;
+
     max-width: 540px;
+
     height: auto;
+
     display: block;
 }
 
 
-/* =========================
-   RIGHT CONTENT
-   ========================= */
+/* CONTENT */
 
 .budgeting-basics-content {
     max-width: 560px;
 }
 
+
+/* SAME LABEL STYLE AS PRINCIPLE 02 */
+
 .budgeting-eyebrow {
     display: block;
-    font-size: 17px;
+
+    margin-bottom: 12px;
+
+    font-size: 16px;
+
     font-weight: 500;
-    margin-bottom: 10px;
+
     color: #222;
 }
+
+
+/* SAME HEADING STYLE */
 
 .budgeting-basics-content h2 {
     margin: 0 0 22px;
-    font-size: 46px;
+
+    font-size: 52px;
+
     line-height: 1.05;
+
     font-weight: 800;
+
     letter-spacing: -1.5px;
+
     color: #111;
 }
 
+
+/* SAME INTRO STYLE */
+
 .budgeting-intro {
-    font-size: 21px;
-    line-height: 1.45;
-    font-weight: 500;
-    color: #222;
-    margin: 0 0 18px;
+    max-width: 530px;
+
+    margin: 0 0 42px;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: #333;
 }
+
+
+/* REMOVE EXTRA DIFFERENCE FROM OLD BODY PARAGRAPH */
 
 .budgeting-basics-content > p:not(.budgeting-intro) {
     font-size: 17px;
+
     line-height: 1.6;
+
     color: #333;
+
     margin: 0 0 30px;
 }
 
 
-/* =========================
-   POINTS
-   ========================= */
+/* POINTS */
 
 .budgeting-points {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
 
+    flex-direction: column;
+
+    gap: 22px;
 }
 
 .budgeting-point {
     display: flex;
+
     align-items: flex-start;
+
     gap: 16px;
 }
 
+
+/* ICON */
+
 .budgeting-icon {
     width: 42px;
+
     height: 42px;
+
     flex-shrink: 0;
-    text-align: justify;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    background: #f4f4f4;
+    background: #f3f3f3;
+
     border-radius: 10px;
 
-    font-size: 21px;
+    font-size: 20px;
+
+    line-height: 1;
 }
 
+
+/* POINT TEXT */
+
 .budgeting-point h3 {
-    margin: 0 0 4px;
-    font-size: 19px;
+    margin: 0 0 5px;
+
+    font-size: 18px;
+
+    line-height: 1.2;
+
     font-weight: 700;
+
     color: #111;
 }
 
 .budgeting-point p {
     margin: 0;
-    font-size: 15px;
+
+    max-width: 470px;
+
+    font-size: 14px;
+
     line-height: 1.45;
-    color: #444;
+
+    color: #555;
 }
 
 
-/* =========================
-   BUTTON
-   ========================= */
+/* BUTTON */
 
 .budgeting-button {
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
 
     margin-top: 35px;
@@ -1325,27 +1294,32 @@ html {
     padding: 15px 30px;
 
     background: #ffc400;
+
     color: #111;
 
     text-decoration: none;
+
     font-size: 16px;
+
     font-weight: 700;
 
     border-radius: 30px;
 
-    transition: transform 0.2s ease,
-                background 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
 }
 
 .budgeting-button:hover {
     transform: translateY(-2px);
+
     background: #ffca20;
 }
 
 
-/* =========================
-   TABLET
-   ========================= */
+/* =========================================================
+   PRINCIPLE 01 TABLET
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -1355,11 +1329,13 @@ html {
 
     .budgeting-basics-container {
         grid-template-columns: 1fr;
+
         gap: 50px;
     }
 
     .budgeting-basics-content {
         max-width: 700px;
+
         margin: 0 auto;
     }
 
@@ -1370,9 +1346,9 @@ html {
 }
 
 
-/* =========================
-   MOBILE
-   ========================= */
+/* =========================================================
+   PRINCIPLE 01 MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -1385,11 +1361,11 @@ html {
     }
 
     .budgeting-basics-content h2 {
-        font-size: 36px;
+        font-size: 38px;
     }
 
     .budgeting-intro {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .budgeting-basics-content > p:not(.budgeting-intro) {
@@ -1406,18 +1382,21 @@ html {
 
     .budgeting-button {
         width: 100%;
+
         box-sizing: border-box;
     }
 
 }
 
 
-/* =====================================================
-   NEEDS VS. WANTS SECTION
-   ===================================================== */
+/* =========================================================
+   PRINCIPLE 02
+   NEEDS VS. WANTS
+========================================================= */
 
 .needs-wants-section {
     width: 100%;
+
     max-width: 1200px;
 
     margin: 0 auto;
@@ -1425,7 +1404,9 @@ html {
     padding: 120px 60px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 80px;
@@ -1434,9 +1415,9 @@ html {
 }
 
 
-/* =====================================================
-   LEFT CONTENT
-   ===================================================== */
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .needs-wants-content {
     flex: 1;
@@ -1445,7 +1426,7 @@ html {
 }
 
 
-/* Small label */
+/* SAME LABEL AS BUDGETING BASICS */
 
 .needs-wants-label {
     display: block;
@@ -1453,18 +1434,20 @@ html {
     margin-bottom: 12px;
 
     font-size: 16px;
+
     font-weight: 500;
 
     color: #222;
 }
 
 
-/* Main heading */
+/* SAME HEADING SIZE */
 
 .needs-wants-content h2 {
     margin: 0 0 22px;
 
     font-size: 52px;
+
     line-height: 1.05;
 
     font-weight: 800;
@@ -1475,7 +1458,7 @@ html {
 }
 
 
-/* Intro paragraph */
+/* SAME INTRO */
 
 .needs-wants-intro {
     max-width: 530px;
@@ -1483,15 +1466,16 @@ html {
     margin: 0 0 42px;
 
     font-size: 18px;
+
     line-height: 1.55;
 
     color: #333;
 }
 
 
-/* =====================================================
+/* =========================================================
    FOUR POINTS
-   ===================================================== */
+========================================================= */
 
 .needs-wants-points {
     display: flex;
@@ -1500,9 +1484,6 @@ html {
 
     gap: 22px;
 }
-
-
-/* Individual point */
 
 .needs-wants-point {
     display: flex;
@@ -1513,12 +1494,13 @@ html {
 }
 
 
-/* =====================================================
-   EMOJI BOX
-   ===================================================== */
+/* =========================================================
+   ICON BOX
+========================================================= */
 
 .point-icon {
     width: 42px;
+
     height: 42px;
 
     flex-shrink: 0;
@@ -1526,6 +1508,7 @@ html {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 10px;
@@ -1540,7 +1523,7 @@ html {
 }
 
 
-/* Different subtle backgrounds */
+/* Subtle variation */
 
 .needs-wants-point:nth-child(1) .point-icon {
     background: #f3f3f3;
@@ -1559,19 +1542,19 @@ html {
 }
 
 
-/* =====================================================
+/* =========================================================
    POINT TEXT
-   ===================================================== */
+========================================================= */
 
 .point-text {
     padding-top: 1px;
 }
 
-
 .point-text h3 {
     margin: 0 0 5px;
 
     font-size: 18px;
+
     line-height: 1.2;
 
     font-weight: 700;
@@ -1579,42 +1562,51 @@ html {
     color: #111;
 }
 
-
 .point-text p {
     margin: 0;
 
     max-width: 470px;
 
     font-size: 14px;
+
     line-height: 1.45;
 
     color: #555;
 }
 
 
-/* =====================================================
+/* =========================================================
    RIGHT IMAGE
-   ===================================================== */
+========================================================= */
 
-.needs-wants-image { 
-    flex: 1; 
-    min-width: 0; 
-    
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-} 
+.needs-wants-image {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
 
 .needs-wants-image img {
-    width: 110%;
+    display: block;
+
+    width: 115%;
+
     max-width: 1200px;
+
+    height: auto;
+
     object-fit: contain;
 }
 
 
-/* =====================================================
-   TABLET
-   ===================================================== */
+/* =========================================================
+   PRINCIPLE 02 TABLET
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -1624,16 +1616,13 @@ html {
         gap: 45px;
     }
 
-
     .needs-wants-content h2 {
         font-size: 42px;
     }
 
-
     .needs-wants-intro {
         font-size: 16px;
     }
-
 
     .needs-wants-image img {
         max-width: 420px;
@@ -1642,9 +1631,9 @@ html {
 }
 
 
-/* =====================================================
-   MOBILE
-   ===================================================== */
+/* =========================================================
+   PRINCIPLE 02 MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
 
@@ -1656,18 +1645,19 @@ html {
         gap: 55px;
     }
 
-
     .needs-wants-content {
         width: 100%;
 
         max-width: 100%;
     }
 
+    .needs-wants-label {
+        font-size: 16px;
+    }
 
     .needs-wants-content h2 {
         font-size: 38px;
     }
-
 
     .needs-wants-intro {
         max-width: 100%;
@@ -1675,11 +1665,9 @@ html {
         font-size: 16px;
     }
 
-
     .needs-wants-image {
         width: 100%;
     }
-
 
     .needs-wants-image img {
         width: 100%;

@@ -403,17 +403,16 @@ html {
 }
 
 .hero-description {
-    max-width: 660px;
+   max-width: 420px;
 
-    margin-top: 45px;
+    margin:
+        30px auto 0;
 
-    color: #111111;
+    color: #5d5d5d;
 
-    font-size: 25px;
+    font-size: 17px;
 
-    line-height: 1.45;
-
-    font-weight: 600;
+    line-height: 1.6;
 }
 
 .hero-buttons {
@@ -422,7 +421,7 @@ html {
     justify-content: center;
     align-items: center;
 
-    margin-top: 50px;
+    margin-top: 40px;
 
     gap: 4px;
 }
@@ -439,17 +438,19 @@ html {
 
     background: #ffc400;
 
-    color: #000000;
+    color: #000000cb;
 
     text-decoration: none;
 
-    font-size: 18px;
+    font-size: 20px;
 
-    font-weight: 700;
+    font-weight: 800;
 
     line-height: 1;
 
     border-radius: 100px;
+
+    letter-spacing: 2px;
 
     transition:
         transform 0.2s ease,
@@ -1675,4 +1676,2231 @@ html {
         max-width: 450px;
     }
 
+}
+
+
+/* =========================================================
+   BUDGETBASICS — TESTIMONIAL SECTION
+========================================================= */
+
+.bb-testimonials {
+    --yellow: #ffc400;
+    --black: #111111;
+    --white: #ffffff;
+
+    position: relative;
+    width: 100%;
+    min-height: 820px;
+
+    padding: 175px 24px 195px;
+
+    background:
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(255, 255, 255, 0.20) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 80% 65%,
+            rgba(17, 17, 17, 0.06) 0 1.5px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 45% 85%,
+            rgba(255, 255, 255, 0.18) 0 1.5px,
+            transparent 2px
+        ),
+        linear-gradient(
+            120deg,
+            #ffc400 0%,
+            #ffd329 45%,
+            #ffc400 100%
+        );
+
+    background-size:
+        22px 22px,
+        27px 27px,
+        34px 34px,
+        100% 100%;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SUBTLE LIGHT TEXTURE
+========================================================= */
+
+.bb-texture {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+    z-index: 1;
+
+    opacity: 0.55;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 25%,
+            rgba(255,255,255,0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 80% 70%,
+            rgba(255,255,255,0.18),
+            transparent 32%
+        ),
+        linear-gradient(
+            115deg,
+            transparent 20%,
+            rgba(255,255,255,0.07) 50%,
+            transparent 80%
+        );
+}
+
+
+/* =========================================================
+   WAVES
+========================================================= */
+
+.bb-wave {
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    height: 150px;
+
+    overflow: hidden;
+
+    line-height: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.bb-wave svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.bb-wave path {
+    fill: #ffffff;
+}
+
+
+/* TOP */
+
+.bb-wave-top {
+    top: 0;
+}
+
+
+/* BOTTOM */
+
+.bb-wave-bottom {
+    bottom: 0;
+}
+
+
+/* =========================================================
+   INNER CONTENT
+========================================================= */
+
+.bb-testimonials-inner {
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.bb-testimonials-heading {
+    max-width: 760px;
+
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+.bb-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    color: var(--black);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+.bb-testimonials-heading h2 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: 52px;
+    line-height: 1.05;
+
+    font-weight: 850;
+
+    letter-spacing: -2px;
+}
+
+.bb-testimonials-heading p {
+    max-width: 620px;
+
+    margin: 19px auto 0;
+
+    color: #242424;
+
+    font-size: 17px;
+    line-height: 1.6;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   CAROUSEL
+========================================================= */
+
+.bb-testimonial-carousel {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.bb-testimonial-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    padding: 48px 58px 34px;
+
+    background: rgba(255,255,255,0.98);
+
+    border: 1px solid rgba(17,17,17,0.06);
+
+    border-radius: 28px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.12),
+        0 5px 15px rgba(0,0,0,0.05);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   QUOTE MARK
+========================================================= */
+
+.bb-quote-mark {
+    position: absolute;
+
+    top: 8px;
+    left: 27px;
+
+    color: var(--yellow);
+
+    font-size: 82px;
+    line-height: 1;
+
+    font-family: Georgia, serif;
+
+    font-weight: 900;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   STUDENT
+========================================================= */
+
+.bb-student {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.bb-avatar {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    border-radius: 50%;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.bb-student-info {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: left;
+
+    gap: 3px;
+}
+
+.bb-student-info strong {
+    color: var(--black);
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.bb-student-info span {
+    color: #707070;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.bb-quote {
+    min-height: 112px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: 24px;
+
+    line-height: 1.55;
+
+    font-weight: 500;
+
+    letter-spacing: -0.25px;
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.bb-stars {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 23px;
+}
+
+.bb-stars span {
+    color: var(--yellow);
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    -webkit-text-stroke: 1px var(--black);
+}
+
+
+/* =========================================================
+   CAROUSEL FOOTER
+========================================================= */
+
+.bb-carousel-footer {
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   BLACK SLIDER TRACK
+========================================================= */
+
+.bb-progress {
+    position: relative;
+
+    width: 100%;
+    height: 3px;
+
+    background: rgba(17,17,17,0.12);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.bb-progress {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background: rgba(17, 17, 17, 0.10);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bb-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* ONLY 10% WIDTH */
+    width: 10%;
+
+    height: 100%;
+
+    background: #111111;
+
+    border-radius: 20px;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.bb-counter {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 12px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.bb-current {
+    color: var(--black);
+}
+
+
+/* =========================================================
+   CAROUSEL TRANSITION
+========================================================= */
+
+.bb-testimonial-card.is-leaving .bb-student,
+.bb-testimonial-card.is-leaving .bb-quote,
+.bb-testimonial-card.is-leaving .bb-stars {
+    opacity: 0;
+
+    transform: translateX(-35px);
+
+    transition:
+        opacity 0.38s ease-in,
+        transform 0.38s ease-in;
+}
+
+.bb-testimonial-card.is-entering .bb-student,
+.bb-testimonial-card.is-entering .bb-quote,
+.bb-testimonial-card.is-entering .bb-stars {
+    opacity: 0;
+
+    transform: translateX(35px);
+}
+
+.bb-testimonial-card.is-visible .bb-student,
+.bb-testimonial-card.is-visible .bb-quote,
+.bb-testimonial-card.is-visible .bb-stars {
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition:
+        opacity 0.55s ease-out,
+        transform 0.65s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .bb-testimonials {
+        min-height: 780px;
+
+        padding: 155px 24px 180px;
+    }
+
+    .bb-wave {
+        height: 125px;
+    }
+
+    .bb-testimonials-heading h2 {
+        font-size: 44px;
+    }
+
+    .bb-testimonial-card {
+        max-width: 610px;
+
+        padding: 45px 45px 32px;
+    }
+
+    .bb-quote {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .bb-testimonials {
+        min-height: 750px;
+
+        padding: 135px 18px 155px;
+    }
+
+    .bb-wave {
+        height: 100px;
+    }
+
+    .bb-testimonials-heading {
+        margin-bottom: 38px;
+    }
+
+    .bb-eyebrow {
+        font-size: 11px;
+
+        letter-spacing: 1.4px;
+    }
+
+    .bb-testimonials-heading h2 {
+        font-size: 35px;
+
+        letter-spacing: -1.3px;
+    }
+
+    .bb-testimonials-heading p {
+        margin-top: 15px;
+
+        font-size: 15px;
+    }
+
+    .bb-testimonial-card {
+        padding: 40px 23px 28px;
+
+        border-radius: 23px;
+    }
+
+    .bb-quote-mark {
+        top: 10px;
+        left: 17px;
+
+        font-size: 62px;
+    }
+
+    .bb-student {
+        margin-bottom: 5px;
+    }
+
+    .bb-avatar {
+        width: 41px;
+        height: 41px;
+
+        font-size: 14px;
+    }
+
+    .bb-student-info strong {
+        font-size: 14px;
+    }
+
+    .bb-student-info span {
+        font-size: 12px;
+    }
+
+    .bb-quote {
+        min-height: 135px;
+
+        font-size: 19px;
+
+        line-height: 1.5;
+    }
+
+    .bb-stars {
+        margin-top: 18px;
+    }
+
+    .bb-stars span {
+        font-size: 20px;
+    }
+
+    .bb-carousel-footer {
+        margin-top: 25px;
+    }
+}
+
+/* =========================================================
+   PRINCIPLE 03
+   PLAN AHEAD — SAVINGS GOALS
+========================================================= */
+
+.plan-ahead-section {
+    width: 100%;
+
+    padding: 120px 7%;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+.plan-ahead-container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.plan-ahead-image {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+.plan-ahead-image img {
+    width: 120%;
+
+    max-width: 560px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.plan-ahead-content {
+    max-width: 560px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.plan-ahead-eyebrow {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.plan-ahead-content h2 {
+    margin: 0 0 22px;
+
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.plan-ahead-intro {
+    max-width: 530px;
+
+    margin: 0 0 42px;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: #333;
+}
+
+
+/* =========================================================
+   POINTS
+========================================================= */
+
+.plan-ahead-points {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+.plan-ahead-point {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.plan-ahead-icon {
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f3f3f3;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   POINT TEXT
+========================================================= */
+
+.plan-ahead-point-text {
+    min-width: 0;
+}
+
+
+.plan-ahead-point h3 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+
+.plan-ahead-point p {
+    margin: 0;
+
+    max-width: 470px;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.plan-ahead-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    background: #ffc400;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    border-radius: 30px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.plan-ahead-button:hover {
+    transform: translateY(-2px);
+
+    background: #ffca20;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .plan-ahead-section {
+        padding: 90px 6%;
+    }
+
+
+    .plan-ahead-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .plan-ahead-content {
+        max-width: 700px;
+
+        margin: 0 auto;
+    }
+
+
+    .plan-ahead-image img {
+        max-width: 450px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .plan-ahead-section {
+        padding: 70px 25px;
+    }
+
+
+    .plan-ahead-container {
+        gap: 35px;
+    }
+
+
+    .plan-ahead-content h2 {
+        font-size: 38px;
+    }
+
+
+    .plan-ahead-intro {
+        font-size: 16px;
+    }
+
+
+    .plan-ahead-point h3 {
+        font-size: 17px;
+    }
+
+
+    .plan-ahead-point p {
+        font-size: 14px;
+    }
+
+
+    .plan-ahead-button {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =========================================================
+   PRINCIPLE 03
+   PLAN AHEAD — SAVINGS GOALS
+========================================================= */
+
+.plan-ahead-section {
+    width: 100%;
+
+    padding: 120px 7%;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.plan-ahead-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 80px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   IMAGE BLOCK
+========================================================= */
+
+.plan-ahead-image {
+    width: 100%;
+    max-width: 540px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-width: 0;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.plan-ahead-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 700px;
+
+    height: auto;
+
+    max-height: 500px;
+
+    object-fit: contain;
+    object-position: center;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.plan-ahead-content {
+    width: 100%;
+    max-width: 560px;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.plan-ahead-eyebrow {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.plan-ahead-content h2 {
+    margin: 0 0 22px;
+
+    font-size: 52px;
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.plan-ahead-intro {
+    max-width: 530px;
+
+    margin: 0 0 42px;
+
+    font-size: 18px;
+    line-height: 1.55;
+
+    color: #333;
+}
+
+
+/* =========================================================
+   POINTS
+========================================================= */
+
+.plan-ahead-points {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+.plan-ahead-point {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.plan-ahead-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f3f3;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   POINT TEXT
+========================================================= */
+
+.plan-ahead-point-text {
+    min-width: 0;
+}
+
+
+.plan-ahead-point h3 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+
+.plan-ahead-point p {
+    max-width: 470px;
+
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.45;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.plan-ahead-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    background: #ffc400;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    border-radius: 30px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.plan-ahead-button:hover {
+    transform: translateY(-2px);
+
+    background: #ffca20;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .plan-ahead-section {
+        padding: 90px 6%;
+    }
+
+
+    .plan-ahead-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .plan-ahead-image {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 0 auto;
+    }
+
+
+    .plan-ahead-image img {
+        width: 100%;
+
+        max-width: 500px;
+
+        height: auto;
+
+        max-height: 430px;
+    }
+
+
+    .plan-ahead-content {
+        width: 100%;
+        max-width: 700px;
+
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .plan-ahead-section {
+        padding: 70px 25px;
+    }
+
+
+    .plan-ahead-container {
+        gap: 35px;
+    }
+
+
+    .plan-ahead-image {
+        width: 100%;
+        max-width: 380px;
+
+        margin: 0 auto;
+    }
+
+
+    .plan-ahead-image img {
+        width: 100%;
+
+        max-width: 380px;
+
+        height: auto;
+
+        max-height: 450px;
+    }
+
+
+    .plan-ahead-content {
+        width: 100%;
+    }
+
+
+    .plan-ahead-content h2 {
+        font-size: 38px;
+    }
+
+
+    .plan-ahead-intro {
+        font-size: 16px;
+    }
+
+
+    .plan-ahead-point h3 {
+        font-size: 17px;
+    }
+
+
+    .plan-ahead-point p {
+        font-size: 14px;
+    }
+
+
+    .plan-ahead-button {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}
+
+
+
+/* =========================================================
+   PRINCIPLE 04
+   AVOID OVERSPENDING — MONEY MISTAKES
+========================================================= */
+
+.money-mistakes-section {
+    width: 100%;
+
+    padding: 120px 10%;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.money-mistakes-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 80px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.money-mistakes-content {
+    width: 100%;
+    max-width: 560px;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.money-mistakes-content h2 {
+    margin: 0 0 22px;
+
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.money-mistakes-intro {
+    max-width: 530px;
+
+    margin: 0 0 42px;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: #333;
+}
+
+
+/* =========================================================
+   POINTS
+========================================================= */
+
+.money-mistakes-points {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL POINT
+========================================================= */
+
+.money-mistakes-point {
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.money-mistakes-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f3f3;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   POINT TEXT
+========================================================= */
+
+.money-mistakes-point-text {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.money-mistakes-point h3 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+
+.money-mistakes-point p {
+    margin: 0;
+
+    max-width: 470px;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   RIGHT IMAGE
+========================================================= */
+
+.money-mistakes-image {
+    width: 115%;
+
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   IMAGE ITSELF
+========================================================= */
+
+.money-mistakes-image img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    height: auto;
+
+    max-height: 500px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .money-mistakes-section {
+        padding: 90px 6%;
+    }
+
+
+    .money-mistakes-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .money-mistakes-image {
+        order: -1;
+
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+
+    .money-mistakes-image img {
+        width: 100%;
+
+        max-width: 500px;
+
+        max-height: 430px;
+
+        height: auto;
+    }
+
+
+    .money-mistakes-content {
+        max-width: 700px;
+
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .money-mistakes-section {
+        padding: 70px 25px;
+    }
+
+
+    .money-mistakes-container {
+        gap: 35px;
+    }
+
+
+    .money-mistakes-image {
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+
+    .money-mistakes-image img {
+        width: 100%;
+
+        max-width: 400px;
+
+        max-height: 360px;
+
+        height: auto;
+    }
+
+
+    .money-mistakes-content h2 {
+        font-size: 38px;
+    }
+
+
+    .money-mistakes-intro {
+        font-size: 16px;
+    }
+
+
+    .money-mistakes-point h3 {
+        font-size: 17px;
+    }
+
+
+    .money-mistakes-point p {
+        font-size: 14px;
+    }
+
+}
+
+
+
+/* =========================================================
+   CALCULATORS PREVIEW
+   HOMEPAGE INTRO SECTION
+========================================================= */
+
+.calculators-section {
+    position: relative;
+    width: 100%;
+    padding: 170px 6% 180px;
+    background: #eeeeee;
+    box-sizing: border-box;
+    overflow: hidden;
+    isolation: isolate;
+    background-image:
+        radial-gradient(
+            rgba(0, 0, 0, 0.065) 1px,
+            transparent 1px
+        );
+    background-size: 23px 23px;
+}
+
+
+/* =========================================================
+   TOP FLOWING WAVE
+========================================================= */
+
+.calculators-section::before {
+    content: "";
+    position: absolute;
+    width: 115%;
+    height: 260px;
+    top: -145px;
+    left: -7.5%;
+    background: #ffffff;
+    border-radius:
+        0 0 55% 45% /
+        0 0 75% 45%;
+    transform:
+        rotate(-1deg)
+        translateY(10px);
+    z-index: -1;
+}
+
+
+/* =========================================================
+   TOP WAVE LINE
+========================================================= */
+
+.calculators-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 3;
+}
+
+.calculators-container::before {
+    content: "";
+    position: absolute;
+    width: 115%;
+    height: 105px;
+    top: -115px;
+    left: -7.5%;
+    border-top:
+        3px solid rgba(17, 17, 17, 0.12);
+    border-radius: 50%;
+    transform:
+        rotate(-2deg);
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BOTTOM FLOWING WAVE
+========================================================= */
+
+.calculators-section::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 280px;
+    bottom: -165px;
+    left: -10%;
+    background: #ffffff;
+    border-radius:
+        48% 52% 0 0 /
+        45% 78% 0 0;
+    transform:
+        rotate(1.5deg);
+    z-index: -1;
+}
+
+
+/* =========================================================
+   BOTTOM WAVE LINE
+========================================================= */
+
+.calculator-bottom-line {
+    position: absolute;
+    width: 115%;
+    height: 105px;
+    bottom: -115px;
+    left: -7.5%;
+    border-bottom:
+        3px solid rgba(17, 17, 17, 0.12);
+    border-radius: 50%;
+    transform:
+        rotate(1.5deg);
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.calculators-heading {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto 58px;
+    text-align: center;
+    z-index: 5;
+}
+
+.calculators-heading::after {
+    content: "";
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    right: -120px;
+    top: -80px;
+    border-radius: 50%;
+    background: #dcdcdc;
+    border: 2px solid #c7c7c7;
+    z-index: -1;
+}
+
+.calculators-eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 8px 15px;
+    background: #111111;
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+.calculators-heading h2 {
+    margin: 0;
+    color: #111111;
+    font-size: 52px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.calculators-heading p {
+    max-width: 650px;
+    margin: 20px auto 0;
+    color: #444444;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PREVIEW GRID
+========================================================= */
+
+.calculator-preview-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    z-index: 5;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   PREVIEW CARD (image on top, content below)
+========================================================= */
+
+.calculator-preview-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #ffffff;
+    border: 2px solid #111111;
+    border-radius: 24px;
+    box-sizing: border-box;
+    box-shadow:
+        7px 7px 0 #111111;
+    overflow: hidden;
+    text-align: left;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.calculator-preview-card:hover {
+    transform:
+        translate(-3px, -5px);
+    box-shadow:
+        11px 12px 0 #111111;
+}
+
+
+/* =========================================================
+   CARD IMAGE (top section)
+========================================================= */
+
+.calculator-preview-image {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    border-bottom: 2px solid #111111;
+    overflow: hidden;
+    background: #e2e2e2;
+}
+
+.calculator-preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================================================
+   CARD NUMBER (overlay badge on the image)
+========================================================= */
+
+.calculator-preview-number {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111111;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   CARD CONTENT (below the image)
+========================================================= */
+
+.calculator-preview-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    padding: 26px 28px 30px;
+}
+
+
+/* =========================================================
+   CARD TAG (small eyebrow above title)
+========================================================= */
+
+.calculator-preview-tag {
+    display: inline-block;
+    align-self: center;
+    margin-bottom: 14px;
+    padding: 5px 12px;
+    background: #eeeeee;
+    border: 2px solid #111111;
+    color: #111111;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.calculator-preview-card h3 {
+    margin: 0 0 11px;
+    color: #111111;
+    font-size: 23px;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.calculator-preview-card p {
+    margin: 0;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CARD LINK (Learn More, sticks to bottom of card)
+========================================================= */
+
+.calculator-preview-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 22px;
+    color: #111111;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+}
+
+.calculator-preview-link span {
+    transition: transform 0.2s ease;
+}
+
+.calculator-preview-link:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.calculators-preview-action {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    z-index: 5;
+}
+
+.calculator-explore-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    padding: 15px 25px;
+    background: #111111;
+    color: #ffffff;
+    border: 2px solid #111111;
+    border-radius: 30px;
+    box-shadow:
+        4px 4px 0 #888888;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.calculator-explore-button span {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.calculator-explore-button:hover {
+    background: #333333;
+    transform:
+        translate(-1px, -2px);
+    box-shadow:
+        6px 6px 0 #777777;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .calculators-section {
+        padding:
+            155px 5% 165px;
+    }
+
+    .calculators-section::before {
+        width: 135%;
+        height: 230px;
+        top: -135px;
+        left: -17.5%;
+    }
+
+    .calculators-section::after {
+        width: 135%;
+        height: 240px;
+        bottom: -145px;
+        left: -17.5%;
+    }
+
+    .calculator-bottom-line {
+        width: 135%;
+        height: 90px;
+        bottom: -100px;
+        left: -17.5%;
+        border-bottom:
+            3px solid rgba(17, 17, 17, 0.12);
+    }
+
+    .calculators-heading h2 {
+        font-size: 46px;
+    }
+
+    .calculator-preview-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .calculator-preview-card:last-child {
+        grid-column:
+            1 / -1;
+        max-width: 50%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .calculators-heading::after {
+        width: 110px;
+        height: 110px;
+        right: -60px;
+        top: -55px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .calculators-section {
+        padding:
+            125px 22px 145px;
+        background-size:
+            19px 19px;
+    }
+
+    .calculators-section::before {
+        width: 180%;
+        height: 185px;
+        top: -105px;
+        left: -40%;
+        border-radius:
+            0 0 58% 42% /
+            0 0 72% 48%;
+        transform:
+            rotate(-2deg);
+    }
+
+    .calculators-section::after {
+        width: 180%;
+        height: 195px;
+        bottom: -115px;
+        left: -40%;
+        border-radius:
+            46% 54% 0 0 /
+            48% 75% 0 0;
+        transform:
+            rotate(2deg);
+    }
+
+    .calculator-bottom-line {
+        width: 180%;
+        height: 80px;
+        bottom: -85px;
+        left: -40%;
+        border-bottom:
+            2px solid rgba(17, 17, 17, 0.12);
+        transform:
+            rotate(2deg);
+    }
+
+    .calculators-heading::after {
+        width: 75px;
+        height: 75px;
+        right: -30px;
+        top: -35px;
+    }
+
+    .calculators-heading {
+        margin-bottom: 42px;
+    }
+
+    .calculators-eyebrow {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .calculators-heading h2 {
+        font-size: 37px;
+        letter-spacing: -1.5px;
+    }
+
+    .calculators-heading p {
+        margin-top: 17px;
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .calculator-preview-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+    }
+
+    .calculator-preview-card:last-child {
+        grid-column: auto;
+        max-width: none;
+        margin: 0;
+    }
+
+    .calculator-preview-image {
+        height: 170px;
+    }
+
+    .calculator-preview-content {
+        padding: 22px 22px 26px;
+    }
+
+    .calculator-preview-card h3 {
+        font-size: 21px;
+    }
+
+    .calculator-preview-card p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .calculators-preview-action {
+        margin-top: 40px;
+    }
+
+    .calculator-explore-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }

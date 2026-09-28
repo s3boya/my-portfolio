@@ -66,6 +66,29 @@ input {
 
 
 /* =========================================================
+   HIDE SCROLLBAR TRACK
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 10px;
+}
+
+html {
+    scrollbar-color: #999 transparent;
+    scrollbar-width: thin;
+}
+
+
+/* =========================================================
    NAVBAR CONTAINER
 ========================================================= */
 

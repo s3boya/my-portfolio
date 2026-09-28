@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vr-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050510"/>
+      <stop offset="60%" stop-color="#090d24"/>
+      <stop offset="100%" stop-color="#020308"/>
+    </linearGradient>
+    <linearGradient id="vr-warp" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#00ffff" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#00f0ff" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#7000ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff00a0" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="vr-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="650" fill="url(#vr-bg)"/>
+
+  <!-- Starfield & Speed Particles -->
+  <g fill="#ffffff" opacity="0.6">
+    <circle cx="80" cy="120" r="1.5"/><circle cx="210" cy="70" r="2"/><circle cx="350" cy="190" r="1.2"/>
+    <circle cx="680" cy="80" r="1.8"/><circle cx="820" cy="140" r="1.5"/><circle cx="910" cy="90" r="2.2"/>
+    <circle cx="140" cy="480" r="1.5"/><circle cx="890" cy="450" r="1.8"/><circle cx="750" cy="540" r="1.2"/>
+  </g>
+
+  <!-- Speed Vortex Rings -->
+  <g stroke="#00f0ff" stroke-width="2" fill="none" opacity="0.4" filter="url(#vr-glow)">
+    <ellipse cx="500" cy="325" rx="420" ry="190" stroke-dasharray="14 10"/>
+    <ellipse cx="500" cy="325" rx="300" ry="130" stroke="#7000ff" stroke-width="2.5" stroke-dasharray="20 12"/>
+    <ellipse cx="500" cy="325" rx="180" ry="75" stroke="#ff00a0" stroke-width="3"/>
+  </g>
+
+  <!-- High-Speed Tunnel Horizon Lines -->
+  <g stroke="url(#vr-warp)" stroke-width="3" filter="url(#vr-glow)">
+    <line x1="500" y1="325" x2="-50" y2="100"/>
+    <line x1="500" y1="325" x2="-80" y2="325"/>
+    <line x1="500" y1="325" x2="-50" y2="550"/>
+    <line x1="500" y1="325" x2="1050" y2="100"/>
+    <line x1="500" y1="325" x2="1080" y2="325"/>
+    <line x1="500" y1="325" x2="1050" y2="550"/>
+  </g>
+
+  <!-- Supersonic Anti-Grav Speeder Silhouette -->
+  <g filter="url(#vr-glow)">
+    <!-- Speeder Plasma Thruster Plume -->
+    <polygon points="500,325 450,340 400,325 450,310" fill="#00ffff" opacity="0.9"/>
+    <polygon points="500,325 430,335 370,325 430,315" fill="#ffffff" opacity="0.95"/>
+    
+    <!-- Speeder Hull -->
+    <polygon points="590,325 480,290 495,320 480,325 495,330 480,360" fill="#14172a" stroke="#00f0ff" stroke-width="2.5"/>
+    <!-- Wing Blades -->
+    <path d="M520,325 L470,270 L490,265 L550,320 Z" fill="#6c4cff"/>
+    <path d="M520,325 L470,380 L490,385 L550,330 Z" fill="#6c4cff"/>
+    <!-- Cockpit Canopy -->
+    <polygon points="540,325 500,318 520,325 500,332" fill="#00ffff"/>
+  </g>
+
+  <!-- Typography Artwork -->
+  <g text-anchor="middle" font-family="'Inter', sans-serif">
+    <text x="500" y="240" font-size="78" font-weight="900" letter-spacing="16" fill="#ffffff" filter="url(#vr-glow)">VOID RUNNER</text>
+    <text x="500" y="280" font-size="16" font-weight="700" letter-spacing="9" fill="#00f0ff">ZERO-G HYPER ACCELERATION</text>
+  </g>
+</svg>

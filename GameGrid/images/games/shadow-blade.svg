@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sb-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d0408"/>
+      <stop offset="60%" stop-color="#210813"/>
+      <stop offset="100%" stop-color="#090205"/>
+    </linearGradient>
+    <radialGradient id="sb-moon" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#ff0055" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#800f2f" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0d0408" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sb-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1000" height="650" fill="url(#sb-bg)"/>
+  <circle cx="500" cy="300" r="180" fill="url(#sb-moon)"/>
+  <circle cx="500" cy="300" r="120" fill="#f8f9fa" opacity="0.9"/>
+  <!-- Pagoda Roof Silhouette -->
+  <path d="M250,480 Q500,430 750,480 L720,530 Q500,490 280,530 Z" fill="#060103"/>
+  <path d="M340,430 Q500,390 660,430 L640,460 Q500,430 360,460 Z" fill="#060103"/>
+  <!-- Katana Slash Slash across screen -->
+  <path d="M150,560 Q500,320 850,140" stroke="#ff0055" stroke-width="4" fill="none" filter="url(#sb-glow)"/>
+  <path d="M140,565 Q500,320 860,135" stroke="#ffffff" stroke-width="2" fill="none"/>
+  <!-- Cherry Blossom Petals -->
+  <g fill="#ff4d6d" opacity="0.8">
+    <ellipse cx="320" cy="240" rx="12" ry="6" transform="rotate(25 320 240)"/>
+    <ellipse cx="680" cy="380" rx="14" ry="7" transform="rotate(-35 680 380)"/>
+    <ellipse cx="440" cy="460" rx="10" ry="5" transform="rotate(45 440 460)"/>
+  </g>
+  <g text-anchor="middle" font-family="'Inter', sans-serif">
+    <text x="500" y="240" font-size="76" font-weight="900" letter-spacing="14" fill="#ffffff" filter="url(#sb-glow)">SHADOW BLADE</text>
+    <text x="500" y="280" font-size="15" font-weight="700" letter-spacing="8" fill="#ff4d6d">HONOR IN THE DARKNESS</text>
+  </g>
+</svg>

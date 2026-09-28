@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mr-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a1811"/>
+      <stop offset="50%" stop-color="#142c20"/>
+      <stop offset="100%" stop-color="#050d09"/>
+    </linearGradient>
+    <radialGradient id="mr-glow-rad" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#52b788" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#2d6a4f" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a1811" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mr-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1000" height="650" fill="url(#mr-bg)"/>
+  <circle cx="500" cy="300" r="240" fill="url(#mr-glow-rad)"/>
+  <!-- Ancient Standing Stone Monoliths -->
+  <g fill="#060c08">
+    <polygon points="260,520 280,320 330,310 350,520"/>
+    <polygon points="650,520 670,310 720,320 740,520"/>
+    <polygon points="460,520 480,240 520,240 540,520"/>
+    <rect x="0" y="500" width="1000" height="150"/>
+  </g>
+  <!-- Glowing Runes on Center Monolith -->
+  <g stroke="#95d5b2" stroke-width="2" fill="none" filter="url(#mr-glow)">
+    <circle cx="500" cy="310" r="16"/>
+    <line x1="500" y1="280" x2="500" y2="380"/>
+    <line x1="485" y1="340" x2="515" y2="340"/>
+  </g>
+  <!-- Spores / Fairy Fireflies -->
+  <g fill="#b7e4c7" opacity="0.8" filter="url(#mr-glow)">
+    <circle cx="220" cy="280" r="4"/><circle cx="390" cy="220" r="3"/>
+    <circle cx="600" cy="250" r="3.5"/><circle cx="780" cy="290" r="4"/>
+    <circle cx="500" cy="180" r="5"/><circle cx="340" cy="420" r="2.5"/>
+  </g>
+  <g text-anchor="middle" font-family="'Inter', sans-serif">
+    <text x="500" y="160" font-size="74" font-weight="900" letter-spacing="14" fill="#ffffff" filter="url(#mr-glow)">MYTHIC REALM</text>
+    <text x="500" y="200" font-size="15" font-weight="700" letter-spacing="8" fill="#74c69d">CHRONICLES OF ANCIENT GAIA</text>
+  </g>
+</svg>

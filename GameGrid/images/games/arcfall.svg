@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="af-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c0717"/>
+      <stop offset="50%" stop-color="#190c2e"/>
+      <stop offset="100%" stop-color="#08040d"/>
+    </linearGradient>
+    <radialGradient id="af-moon" cx="50%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#d946ef" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#8b5cf6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#190c2e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="af-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="650" fill="url(#af-bg)"/>
+  
+  <!-- Eclipse Arcane Moon -->
+  <circle cx="500" cy="270" r="160" fill="url(#af-moon)"/>
+  <circle cx="500" cy="270" r="135" fill="#0d0818"/>
+  <circle cx="500" cy="270" r="145" fill="none" stroke="#a855f7" stroke-width="2.5" opacity="0.8" filter="url(#af-glow)"/>
+
+  <!-- Magical Runes Ring -->
+  <g stroke="#c084fc" stroke-width="1.5" fill="none" opacity="0.6" filter="url(#af-glow)">
+    <circle cx="500" cy="270" r="190" stroke-dasharray="10 20 5 15"/>
+    <circle cx="500" cy="270" r="215" stroke-dasharray="30 15 10 25"/>
+  </g>
+
+  <!-- Gothic Fantasy Citadel & Spires -->
+  <g fill="#07030c">
+    <!-- Jagged crag base -->
+    <polygon points="-50,650 -50,470 180,410 320,450 500,380 680,440 820,400 1050,480 1050,650"/>
+    
+    <!-- Central Citadel Keep & Spire -->
+    <polygon points="460,400 460,260 500,160 540,260 540,400"/>
+    <!-- Flanking Spires -->
+    <polygon points="400,430 400,310 425,230 450,310 450,430"/>
+    <polygon points="550,430 550,310 575,230 600,310 600,430"/>
+    <polygon points="340,460 340,360 360,300 380,360 380,460"/>
+    <polygon points="620,460 620,360 640,300 660,360 660,460"/>
+  </g>
+
+  <!-- Arcane Energy Beams & Floating Crystals -->
+  <g filter="url(#af-glow)">
+    <polygon points="500,140 490,160 500,180 510,160" fill="#f472b6"/>
+    <polygon points="360,280 355,290 360,300 365,290" fill="#c084fc"/>
+    <polygon points="640,280 635,290 640,300 645,290" fill="#c084fc"/>
+    <line x1="500" y1="160" x2="500" y2="40" stroke="#d946ef" stroke-width="2.5" opacity="0.9"/>
+  </g>
+
+  <!-- Title Art -->
+  <g text-anchor="middle" font-family="'Inter', sans-serif">
+    <text x="500" y="380" font-size="82" font-weight="900" letter-spacing="16" fill="#ffffff" filter="url(#af-glow)">ARCFALL</text>
+    <text x="500" y="420" font-size="16" font-weight="700" letter-spacing="9" fill="#c084fc">SHADOWS OF THE ASCENDED REALM</text>
+  </g>
+</svg>

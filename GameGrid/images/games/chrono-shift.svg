@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b132b"/>
+      <stop offset="50%" stop-color="#1c2541"/>
+      <stop offset="100%" stop-color="#050a14"/>
+    </linearGradient>
+    <filter id="cs-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1000" height="650" fill="url(#cs-bg)"/>
+  <!-- Quantum Chrono Rings -->
+  <g stroke="#48cae4" fill="none" opacity="0.6" filter="url(#cs-glow)">
+    <circle cx="500" cy="325" r="240" stroke-width="2" stroke-dasharray="10 15 30 15"/>
+    <circle cx="500" cy="325" r="180" stroke-width="3" stroke="#6c4cff" stroke-dasharray="20 40"/>
+    <circle cx="500" cy="325" r="110" stroke-width="2.5" stroke="#00b4d8"/>
+    <!-- Clock hand lines -->
+    <line x1="500" y1="325" x2="620" y2="205" stroke="#ffffff" stroke-width="3"/>
+    <line x1="500" y1="325" x2="420" y2="445" stroke="#6c4cff" stroke-width="4"/>
+  </g>
+  <circle cx="500" cy="325" r="18" fill="#ffffff" filter="url(#cs-glow)"/>
+  <g text-anchor="middle" font-family="'Inter', sans-serif">
+    <text x="500" y="210" font-size="74" font-weight="900" letter-spacing="14" fill="#ffffff" filter="url(#cs-glow)">CHRONO SHIFT</text>
+    <text x="500" y="250" font-size="15" font-weight="700" letter-spacing="8" fill="#48cae4">TEMPORAL PARADOX ADVENTURE</text>
+  </g>
+</svg>

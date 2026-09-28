@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sh-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040612"/>
+      <stop offset="50%" stop-color="#0c122b"/>
+      <stop offset="100%" stop-color="#02040a"/>
+    </linearGradient>
+    <radialGradient id="sh-planet" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#4cc9f0"/>
+      <stop offset="50%" stop-color="#4361ee"/>
+      <stop offset="100%" stop-color="#140152"/>
+    </radialGradient>
+    <filter id="sh-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1000" height="650" fill="url(#sh-bg)"/>
+  <!-- Planet with Planetary Rings -->
+  <g transform="translate(680, 240)">
+    <circle cx="0" cy="0" r="160" fill="url(#sh-planet)"/>
+    <!-- Ring System -->
+    <ellipse cx="0" cy="0" rx="340" ry="70" fill="none" stroke="#7209b7" stroke-width="24" opacity="0.6" transform="rotate(-25)"/>
+    <ellipse cx="0" cy="0" rx="310" ry="60" fill="none" stroke="#4cc9f0" stroke-width="12" opacity="0.8" transform="rotate(-25)"/>
+  </g>
+  <!-- Orbital Station Silhouette -->
+  <g fill="#0b0e1e" stroke="#4cc9f0" stroke-width="1.5">
+    <circle cx="280" cy="380" r="50"/>
+    <line x1="160" y1="380" x2="400" y2="380" stroke-width="6"/>
+    <!-- Solar Panels -->
+    <rect x="140" y="320" width="50" height="120" rx="4"/>
+    <rect x="370" y="320" width="50" height="120" rx="4"/>
+    <!-- Beacon Light -->
+    <circle cx="280" cy="380" r="6" fill="#f72585" filter="url(#sh-glow)"/>
+  </g>
+  <g text-anchor="middle" font-family="'Inter', sans-serif">
+    <text x="500" y="160" font-size="70" font-weight="900" letter-spacing="14" fill="#ffffff" filter="url(#sh-glow)">STELLARIS HORIZON</text>
+    <text x="500" y="200" font-size="15" font-weight="700" letter-spacing="8" fill="#4cc9f0">DEEP SPACE GRAND STRATEGY</text>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="au-p-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#0f1936"/>
+      <stop offset="100%" stop-color="#02040a"/>
+    </linearGradient>
+    <radialGradient id="au-p-glow-rad" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#06b6d4" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#050814" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="au-p-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#au-p-bg)"/>
+  <circle cx="300" cy="400" r="260" fill="url(#au-p-glow-rad)"/>
+
+  <!-- Starfield -->
+  <g fill="#ffffff" opacity="0.7">
+    <circle cx="80" cy="120" r="1.5"/><circle cx="160" cy="80" r="2"/><circle cx="280" cy="180" r="1.2"/>
+    <circle cx="480" cy="90" r="2"/><circle cx="520" cy="220" r="1.5"/><circle cx="120" cy="620" r="1.8"/>
+    <circle cx="490" cy="660" r="1.5"/>
+  </g>
+
+  <!-- Large Center Red Crewmate Character -->
+  <g transform="translate(300, 420)">
+    <!-- Backpack -->
+    <rect x="-140" y="-80" width="50" height="150" rx="24" fill="#991b1b" stroke="#000000" stroke-width="8"/>
+    <!-- Body -->
+    <path d="M-100,-120 Q0,-160 70,-120 Q110,-70 110,50 L110,130 Q110,160 70,160 L40,160 Q15,160 15,130 L15,70 L-35,70 L-35,130 Q-35,160 -65,160 L-90,160 Q-110,160 -110,130 Z" fill="#ef4444" stroke="#000000" stroke-width="10"/>
+    <!-- Cyan Visor -->
+    <ellipse cx="40" cy="-60" rx="70" ry="40" fill="#67e8f9" stroke="#000000" stroke-width="10"/>
+    <ellipse cx="50" cy="-70" rx="42" ry="18" fill="#ffffff" opacity="0.85"/>
+  </g>
+
+  <!-- Title Top -->
+  <g text-anchor="middle" font-family="'Arial Black', 'Inter', sans-serif">
+    <text x="300" y="110" font-size="52" font-weight="900" letter-spacing="6" fill="#ffffff" filter="url(#au-p-glow)">AMONG US</text>
+  </g>
+
+  <rect x="0" y="730" width="600" height="70" fill="#03050c"/>
+  <text x="300" y="770" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="800" letter-spacing="6" fill="#ef4444">INNERLOTH OFFICIAL</text>
+</svg>

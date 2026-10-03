@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07060e"/>
+      <stop offset="50%" stop-color="#191024"/>
+      <stop offset="100%" stop-color="#0b0813"/>
+    </linearGradient>
+    <radialGradient id="cp-yellow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fcee09" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#07060e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cp-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="650" fill="url(#cp-bg)"/>
+  <circle cx="500" cy="340" r="320" fill="url(#cp-yellow)"/>
+
+  <!-- Night City Megastructures Silhouette -->
+  <g fill="#090710">
+    <rect x="80" y="220" width="80" height="430"/>
+    <polygon points="80,220 120,130 160,220"/>
+    <rect x="200" y="180" width="110" height="470"/>
+    <rect x="350" y="240" width="80" height="410"/>
+    <rect x="470" y="160" width="140" height="490"/>
+    <polygon points="470,160 540,80 610,160"/>
+    <rect x="650" y="220" width="95" height="430"/>
+    <rect x="780" y="190" width="120" height="460"/>
+  </g>
+
+  <!-- Glowing Neon Signs & Holo Billboards -->
+  <g filter="url(#cp-glow)">
+    <line x1="120" y1="130" x2="120" y2="350" stroke="#00f0ff" stroke-width="2"/>
+    <line x1="540" y1="80" x2="540" y2="400" stroke="#fcee09" stroke-width="3"/>
+    <rect x="220" y="210" width="70" height="10" fill="#ff003c"/>
+    <rect x="670" y="250" width="55" height="8" fill="#00f0ff"/>
+    <rect x="800" y="220" width="80" height="12" fill="#fcee09"/>
+  </g>
+
+  <!-- Flying AV Vehicles with Thruster Streaks -->
+  <g fill="#ffffff" filter="url(#cp-glow)">
+    <polygon points="320,180 340,175 360,180 340,185" fill="#00f0ff"/>
+    <line x1="260" y1="180" x2="320" y2="180" stroke="#00f0ff" stroke-width="2"/>
+    <polygon points="680,140 700,135 720,140 700,145" fill="#fcee09"/>
+    <line x1="620" y1="140" x2="680" y2="140" stroke="#fcee09" stroke-width="2"/>
+  </g>
+
+  <!-- Cyberpunk 2077 Title Art -->
+  <g text-anchor="middle" font-family="'Arial Black', 'Inter', sans-serif">
+    <text x="500" y="360" font-size="76" font-weight="900" letter-spacing="4" fill="#fcee09" stroke="#00f0ff" stroke-width="2" filter="url(#cp-glow)">CYBERPUNK</text>
+    <text x="500" y="440" font-size="64" font-weight="900" letter-spacing="16" fill="#00f0ff" filter="url(#cp-glow)">2077</text>
+    <text x="500" y="480" font-size="16" font-weight="800" letter-spacing="8" fill="#ffffff">PHANTOM LIBERTY</text>
+  </g>
+</svg>

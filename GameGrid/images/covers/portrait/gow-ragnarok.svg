@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gow-p-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a1220"/>
+      <stop offset="50%" stop-color="#1b2a42"/>
+      <stop offset="100%" stop-color="#080e18"/>
+    </linearGradient>
+    <radialGradient id="gow-p-ice" cx="50%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a1220" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gow-p-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#gow-p-bg)"/>
+  <circle cx="300" cy="380" r="240" fill="url(#gow-p-ice)"/>
+
+  <!-- Norse Runic Circle & Omega Crest -->
+  <g stroke="#38bdf8" stroke-width="3" fill="none" opacity="0.6" filter="url(#gow-p-glow)">
+    <circle cx="300" cy="380" r="160" stroke-dasharray="20 15 10 15"/>
+    <path d="M220,440 L250,440 Q250,260 300,260 Q350,260 350,440 L380,440" stroke-width="4"/>
+  </g>
+
+  <!-- Red Spartan Tattoo -->
+  <path d="M275,260 Q290,360 260,460" stroke="#ef4444" stroke-width="8" fill="none" filter="url(#gow-p-glow)"/>
+
+  <!-- Kratos Stern Silhouette -->
+  <g fill="#040912">
+    <ellipse cx="300" cy="480" rx="36" ry="42"/>
+    <!-- Beard & War armor -->
+    <path d="M270,490 Q300,560 330,490 Z"/>
+    <path d="M180,800 L240,540 L360,540 L420,800 Z"/>
+  </g>
+
+  <!-- Title Top -->
+  <g text-anchor="middle" font-family="'Cinzel', 'Trajan Pro', serif">
+    <text x="300" y="85" font-size="18" font-weight="700" letter-spacing="10" fill="#94a3b8">PLAYSTATION</text>
+    <text x="300" y="130" font-size="44" font-weight="900" letter-spacing="6" fill="#ffffff" filter="url(#gow-p-glow)">GOD OF WAR</text>
+    <text x="300" y="170" font-size="22" font-weight="800" letter-spacing="12" fill="#38bdf8">RAGNARÖK</text>
+  </g>
+
+  <rect x="0" y="730" width="600" height="70" fill="#04070e"/>
+  <text x="300" y="770" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="800" letter-spacing="6" fill="#38bdf8">SANTA MONICA STUDIO</text>
+</svg>

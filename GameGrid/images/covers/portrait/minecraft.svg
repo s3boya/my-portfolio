@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mc-p-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="40%" stop-color="#1e3a8a"/>
+      <stop offset="70%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="mc-p-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#mc-p-sky)"/>
+
+  <!-- Square Pixel Sun -->
+  <rect x="240" y="240" width="120" height="120" fill="#fef08a" filter="url(#mc-p-glow)"/>
+
+  <!-- Isometric Pixelated Grass/Dirt Cube Block in center -->
+  <g transform="translate(300, 460)">
+    <!-- Top Face (Grass) -->
+    <polygon points="0,-90 100,-40 0,10 -100,-40" fill="#22c55e"/>
+    <!-- Left Face (Dirt) -->
+    <polygon points="-100,-40 0,10 0,120 -100,70" fill="#78350f"/>
+    <!-- Right Face (Dirt) -->
+    <polygon points="0,10 100,-40 100,70 0,120" fill="#58260b"/>
+    <!-- Grass overhang drips -->
+    <polygon points="-100,-40 -100,-20 -80,-10 -60,-25 -40,-5 -20,-20 0,10 0,-10" fill="#16a34a"/>
+  </g>
+
+  <!-- Title Top -->
+  <g text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif">
+    <text x="300" y="110" font-size="52" font-weight="900" letter-spacing="6" fill="#e2e8f0" stroke="#0f172a" stroke-width="6" filter="url(#mc-p-glow)">MINECRAFT</text>
+  </g>
+
+  <rect x="0" y="730" width="600" height="70" fill="#0b1308"/>
+  <text x="300" y="770" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="800" letter-spacing="6" fill="#4ade80">JAVA &amp; BEDROCK</text>
+</svg>

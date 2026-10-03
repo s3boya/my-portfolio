@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="er-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0806"/>
+      <stop offset="40%" stop-color="#1f160b"/>
+      <stop offset="100%" stop-color="#080604"/>
+    </linearGradient>
+    <radialGradient id="er-erdtree" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#eab308" stop-opacity="0.6"/>
+      <stop offset="80%" stop-color="#854d0e" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0806" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="er-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="650" fill="url(#er-bg)"/>
+  <circle cx="500" cy="300" r="320" fill="url(#er-erdtree)"/>
+
+  <!-- Colossal Golden Erdtree Trunk & Glowing Canopy -->
+  <g stroke="#fef08a" stroke-width="3" fill="none" opacity="0.8" filter="url(#er-glow)">
+    <path d="M500,450 Q480,260 400,100"/>
+    <path d="M500,450 Q520,260 600,100"/>
+    <path d="M480,250 Q360,180 260,140"/>
+    <path d="M520,250 Q640,180 740,140"/>
+    <path d="M490,200 Q450,120 420,60"/>
+    <path d="M510,200 Q550,120 580,60"/>
+  </g>
+
+  <!-- Crags & Lands Between Plateau -->
+  <polygon points="-50,650 -50,490 220,440 380,480 500,420 620,480 780,440 1050,510 1050,650" fill="#060503"/>
+
+  <!-- Elden Ring Intersecting Arc Sigils -->
+  <g stroke="#fde047" stroke-width="2" fill="none" opacity="0.75" filter="url(#er-glow)">
+    <circle cx="500" cy="270" r="140"/>
+    <circle cx="500" cy="220" r="100"/>
+    <circle cx="450" cy="270" r="100"/>
+    <circle cx="550" cy="270" r="100"/>
+    <line x1="500" y1="80" x2="500" y2="440" stroke-width="2.5"/>
+  </g>
+
+  <!-- Tarnished Warrior Silhouette -->
+  <g fill="#020201">
+    <ellipse cx="500" cy="460" rx="14" ry="16"/>
+    <polygon points="480,510 520,510 510,470 490,470"/>
+    <line x1="518" y1="465" x2="528" y2="520" stroke="#fde047" stroke-width="3" filter="url(#er-glow)"/>
+  </g>
+
+  <!-- Title -->
+  <g text-anchor="middle" font-family="'Cinzel', 'Georgia', serif">
+    <text x="500" y="270" font-size="76" font-weight="900" letter-spacing="16" fill="#ffffff" filter="url(#er-glow)">ELDEN RING</text>
+    <text x="500" y="315" font-size="16" font-weight="700" letter-spacing="8" fill="#fde047">SHADOW OF THE ERDTREE</text>
+  </g>
+</svg>

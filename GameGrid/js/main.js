@@ -9,355 +9,392 @@ function getImagePath(path) {
 }
 
 // =============================================================================
-// GAME DATABASE
+// REAL GLOBALLY RENOWNED GAMES DATABASE
 // =============================================================================
 const GAMES_DATA = [
   {
-    id: "neon-rift",
-    title: "Neon Rift",
+    id: "gta-v",
+    title: "Grand Theft Auto V",
     price: 29.99,
     originalPrice: null,
-    genre: "Action · Sci-Fi · PC",
+    genre: "Action · Open World · PC / Console",
     primaryGenre: "Action",
-    platforms: "PC",
-    badge: "FEATURED",
-    badgeClass: "badge-featured",
+    platforms: "PC / Console",
+    badge: "BESTSELLER",
+    badgeClass: "badge-hot",
     rating: 4.9,
-    reviewsCount: "2,410",
-    artwork: "images/games/neon-rift.svg",
-    shortDesc: "Dive into a sprawling synth-lit cyberpunk megacity where cybernetic agility meets hyper-responsive combat.",
-    fullDesc: "Neon Rift transports players into the towering vertical labyrinth of Neo-Veridia. Master fluid parkour mechanics, customize advanced neural implants, and unravel the dark quantum mystery tearing the district apart. Featuring real-time raytraced neon vistas and an adrenaline-pumping synthwave original soundtrack.",
+    reviewsCount: "1,450,000",
+    coverLandscape: "images/covers/landscape/gta-v.jpg",
+    coverPortrait: "images/covers/portrait/gta-v.jpg",
+    artwork: "images/covers/landscape/gta-v.jpg",
+    shortDesc: "Experience Rockstar Games' critically acclaimed open world across the sun-soaked metropolis of Los Santos and Blaine County.",
+    fullDesc: "When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled with some of the most frightening elements of the criminal underworld, they must pull off a series of dangerous heists to survive. Includes Grand Theft Auto Online with endless multiplayer updates, heists, and business empires.",
     features: [
-      "High-octane momentum-based combat with energy katanas and smart firearms",
-      "Expansive seamless vertical city districts with zero loading screens",
-      "Deep cyberware progression tree with over 60 customizable abilities",
-      "Full ultra-wide monitor and high-framerate PC optimization"
+      "Vast interconnected open world spanning Los Santos and Blaine County",
+      "Switch seamlessly between three distinct playable protagonists: Michael, Franklin, and Trevor",
+      "Grand Theft Auto Online included: build criminal empires, plan multi-stage heists, and race custom supercars",
+      "Enhanced 4K visuals, ray tracing, 60 FPS performance, and full controller haptics"
     ],
     sysReq: {
       os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i5-10400 / AMD Ryzen 5 3600",
-      gpu: "NVIDIA RTX 3060 / AMD Radeon RX 6600 XT",
-      ram: "16 GB RAM",
-      storage: "65 GB SSD"
+      cpu: "Intel Core i5-3470 / AMD FX-8350",
+      gpu: "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+      ram: "8 GB RAM",
+      storage: "110 GB SSD"
     }
   },
   {
-    id: "void-runner",
-    title: "Void Runner",
+    id: "cod-mw3",
+    title: "Call of Duty: Modern Warfare III",
+    price: 49.99,
+    originalPrice: 69.99,
+    genre: "Shooter · Action · Tactical · PC / Console",
+    primaryGenre: "Shooter",
+    platforms: "PC / Console",
+    badge: "FEATURED",
+    badgeClass: "badge-featured",
+    rating: 4.6,
+    reviewsCount: "384,000",
+    coverLandscape: "images/covers/landscape/cod.jpg",
+    coverPortrait: "images/covers/portrait/cod.jpg",
+    artwork: "images/covers/landscape/cod.jpg",
+    shortDesc: "Captain Price and Task Force 141 face the ultimate threat in an unrelenting global military campaign.",
+    fullDesc: "In the direct sequel to the record-breaking Modern Warfare II, Captain Price and Task Force 141 face off against the ultranationalist war criminal Vladimir Makarov. Featuring open combat missions, iconic remastered multiplayer maps from MW2 (2009), and an all-new open-world Zombies experience.",
+    features: [
+      "Cinematic campaign with player-choice Open Combat Missions",
+      "Full multiplayer suite featuring all 16 modernized launch maps from MW2 (2009)",
+      "Largest Call of Duty Zombies map ever: team up in PvE extraction survival",
+      "Cross-play and cross-progression across PC and all consoles"
+    ],
+    sysReq: {
+      os: "Windows 10/11 64-bit",
+      cpu: "Intel Core i5-6600 / AMD Ryzen 5 1400",
+      gpu: "NVIDIA GTX 960 / AMD Radeon RX 470",
+      ram: "16 GB RAM",
+      storage: "149 GB SSD"
+    }
+  },
+  {
+    id: "ac-mirage",
+    title: "Assassin's Creed Mirage",
     price: 24.99,
+    originalPrice: 49.99,
+    genre: "Action · Stealth · Historical · PC / Console",
+    primaryGenre: "Action",
+    platforms: "PC / Console",
+    badge: "SALE -50%",
+    badgeClass: "badge-sale",
+    rating: 4.7,
+    reviewsCount: "128,000",
+    coverLandscape: "images/covers/landscape/ac-mirage.jpg",
+    coverPortrait: "images/covers/portrait/ac-mirage.jpg",
+    artwork: "images/covers/landscape/ac-mirage.jpg",
+    shortDesc: "Return to the roots of the franchise in 9th-century Baghdad as Basim transforms into a Master Assassin.",
+    fullDesc: "Experience the story of Basim, a cunning street thief seeking answers and justice across the bustling streets of Golden Age Baghdad. Join the ancient organization known as The Hidden Ones, master lethal stealth parkour assassinations, and uncover the terrifying truths of your destiny.",
+    features: [
+      "A modern homage to the classic franchise roots: parkour, stealth, and assassinations",
+      "Incredibly dense and vibrant 9th-century Baghdad across four distinct districts",
+      "Largest assortment of assassin tools, smoke bombs, throwing knives, and blowdarts",
+      "Stunning Arabian aesthetic with authentic historical immersion"
+    ],
+    sysReq: {
+      os: "Windows 10/11 64-bit",
+      cpu: "Intel Core i7-4790K / AMD Ryzen 5 1600",
+      gpu: "NVIDIA GTX 1060 6GB / AMD Radeon RX 570 4GB",
+      ram: "8 GB RAM",
+      storage: "40 GB SSD"
+    }
+  },
+  {
+    id: "cs-16",
+    title: "Counter-Strike 1.6 (Anthology)",
+    price: 9.99,
     originalPrice: null,
-    genre: "Racing · Arcade · PC / Console",
-    primaryGenre: "Racing",
+    genre: "Shooter · Tactical · Classic · PC",
+    primaryGenre: "Shooter",
+    platforms: "PC",
+    badge: "CLASSIC",
+    badgeClass: "badge-hot",
+    rating: 4.9,
+    reviewsCount: "520,000",
+    coverLandscape: "images/covers/landscape/cs-16.jpg",
+    coverPortrait: "images/covers/portrait/cs-16.jpg",
+    artwork: "images/covers/landscape/cs-16.jpg",
+    shortDesc: "The undisputed godfather of competitive tactical team shooters that defined online multiplayer gaming.",
+    fullDesc: "Play the world's number 1 online action game. Engage in an incredibly realistic brand of terrorist warfare in this wildly popular team-based game. Ally with teammates to complete strategic missions. Take out enemy sites. Rescue hostages. Your role affects your team's success. Your team's success affects your role.",
+    features: [
+      "Timeless round-based tactical bomb defusal and hostage rescue gameplay",
+      "Legendary competitive maps: de_dust2, de_inferno, de_nuke, de_train, cs_assault",
+      "Dedicated server browser with thousands of active community servers and mods",
+      "Runs with lightning-fast latency on virtually any PC configuration"
+    ],
+    sysReq: {
+      os: "Windows XP / 7 / 10 / 11",
+      cpu: "500 MHz processor / Intel Core 2 Duo",
+      gpu: "16MB video card / OpenGL compatible",
+      ram: "512 MB RAM",
+      storage: "2 GB SSD"
+    }
+  },
+  {
+    id: "among-us",
+    title: "Among Us",
+    price: 4.99,
+    originalPrice: null,
+    genre: "Indie · Social Deduction · Party · PC / Console",
+    primaryGenre: "Indie",
     platforms: "PC / Console",
     badge: "HOT",
     badgeClass: "badge-hot",
     rating: 4.8,
-    reviewsCount: "1,890",
-    artwork: "images/games/void-runner.svg",
-    shortDesc: "Break the sound barrier on gravitational race tracks suspended across cosmic nebulae and black holes.",
-    fullDesc: "Void Runner delivers zero-gravity anti-grav racing at breakneck speeds. Pilot custom supersonic craft through twisting magnetic rails, harness quantum slipstreams, and battle rivals with kinetic disruptors in intense 16-player multiplayer lobbies.",
+    reviewsCount: "680,000",
+    coverLandscape: "images/covers/landscape/among-us.jpg",
+    coverPortrait: "images/covers/portrait/among-us.jpg",
+    artwork: "images/covers/landscape/among-us.jpg",
+    shortDesc: "Prepare your spaceship for departure, but beware as one or more random players are Impostors bent on murder!",
+    fullDesc: "Play online or over local WiFi with 4-15 players as you attempt to prep your spaceship for departure, but beware as one or more random players among the Crew are Impostors bent on killing everyone! Complete tasks to keep the ship operating or vote out the deceptive Impostors in heated emergency meetings.",
     features: [
-      "Supersonic physics engine with 120 FPS high-refresh support",
-      "24 interstellar tracks across 6 alien stellar systems",
-      "Dynamic weather including solar flares and cosmic ion storms",
-      "Cross-platform multiplayer with global leaderboard tournaments"
+      "Multiplayer social deduction for 4-15 players across PC, console, and mobile",
+      "Diverse maps: The Skeld, MIRA HQ, Polus, The Airship, and The Fungle",
+      "Customizable game rules, roles (Scientist, Engineer, Guardian Angel, Shapeshifter), and cosmetics",
+      "Seamless cross-platform matchmaking and built-in voice / text chat"
     ],
     sysReq: {
       os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i5-9600K / AMD Ryzen 5 2600X",
-      gpu: "NVIDIA GTX 1660 Ti / AMD Radeon RX 5600 XT",
-      ram: "16 GB RAM",
-      storage: "35 GB SSD"
+      cpu: "Intel Pentium 4 / AMD Athlon 64",
+      gpu: "Intel HD Graphics / DirectX 10 compatible",
+      ram: "1 GB RAM",
+      storage: "1 GB SSD"
     }
   },
   {
-    id: "wildlands",
-    title: "Wildlands",
-    price: 39.99,
-    originalPrice: null,
-    genre: "Adventure · Open World · PC",
-    primaryGenre: "Adventure",
-    platforms: "PC",
-    badge: "NEW",
-    badgeClass: "badge-new",
-    rating: 4.9,
-    reviewsCount: "3,150",
-    artwork: "images/games/wildlands.svg",
-    shortDesc: "Venture deep into an untamed Nordic wilderness filled with breathtaking peaks, wildlife, and ancient mysteries.",
-    fullDesc: "Wildlands is a living, breathing open-world survival adventure set across vast untouched mountain ranges, dense pine valleys, and frozen glacial lakes. Track apex predators, craft shelters, scale towering cliffs, and uncover ancient runic monoliths left behind by a forgotten civilization.",
-    features: [
-      "Dynamic ecosystem where flora and fauna behave realistically with daily cycles",
-      "Physics-driven climbing and exploration mechanics",
-      "Atmospheric volumetric weather with sudden blizzards and golden dawns",
-      "Full co-op support for up to 4 players"
-    ],
-    sysReq: {
-      os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i7-10700K / AMD Ryzen 7 3700X",
-      gpu: "NVIDIA RTX 3070 / AMD Radeon RX 6700 XT",
-      ram: "16 GB RAM",
-      storage: "80 GB SSD"
-    }
-  },
-  {
-    id: "arcfall",
-    title: "Arcfall",
-    price: 34.99,
-    originalPrice: null,
-    genre: "RPG · Fantasy · PC / Console",
+    id: "cyberpunk-2077",
+    title: "Cyberpunk 2077: Phantom Liberty",
+    price: 44.99,
+    originalPrice: 59.99,
+    genre: "RPG · Open World · Sci-Fi · PC / Console",
     primaryGenre: "RPG",
     platforms: "PC / Console",
     badge: "FEATURED",
     badgeClass: "badge-featured",
-    rating: 4.7,
-    reviewsCount: "4,620",
-    artwork: "images/games/arcfall.svg",
-    shortDesc: "Command arcane powers in a crumbling high-fantasy realm on the brink of an eternal lunar eclipse.",
-    fullDesc: "Arcfall combines tactical third-person spellcasting with deep cinematic storytelling. Build your spellweaver from 8 specialized arcane schools, conquer towering gothic citadels, forge alliances with ancient factions, and reshape the destiny of the Ascended Realm.",
+    rating: 4.8,
+    reviewsCount: "710,000",
+    coverLandscape: "images/covers/landscape/cyberpunk-2077.jpg",
+    coverPortrait: "images/covers/portrait/cyberpunk-2077.jpg",
+    artwork: "images/covers/landscape/cyberpunk-2077.jpg",
+    shortDesc: "Become V, an urban mercenary immersed in the high-tech, lethal underbelly of Night City.",
+    fullDesc: "Cyberpunk 2077 is an open-world action-adventure RPG set in Night City, a megalopolis obsessed with power, glamour, and body modification. Take on high-stakes espionage in Dogtown alongside sleeper agent Solomon Reed (Idris Elba) in the acclaimed Phantom Liberty spy-thriller expansion.",
     features: [
-      "Innovative rune-weaving combat: combine elements dynamically on the fly",
-      "Branching narrative with over 12 distinct faction endings",
-      "Handcrafted gothic cathedrals, floating islands, and subterranean vaults",
-      "Stunning orchestral score performed by the London Symphonic Orchestra"
+      "Breathtaking open world with cutting-edge full Path Tracing ray tracing",
+      "Deep cybernetic enhancement tree with Mantis Blades, Sandevistan, and Quickhacking",
+      "Gripping storyline featuring Keanu Reeves as Johnny Silverhand",
+      "Completely overhauled 2.0 combat AI, police system, and vehicle combat"
     ],
     sysReq: {
       os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i7-9700K / AMD Ryzen 7 2700X",
-      gpu: "NVIDIA RTX 2070 Super / AMD Radeon RX 5700 XT",
+      cpu: "Intel Core i7-6700 / AMD Ryzen 5 1600",
+      gpu: "NVIDIA GTX 1060 6GB / AMD Radeon RX 580 8GB",
       ram: "16 GB RAM",
       storage: "70 GB SSD"
     }
   },
   {
-    id: "dust-protocol",
-    title: "Dust Protocol",
-    price: 19.99,
-    originalPrice: 29.99,
-    genre: "Shooter · Tactical · PC",
-    primaryGenre: "Shooter",
-    platforms: "PC",
-    badge: "SALE",
-    badgeClass: "badge-sale",
-    rating: 4.6,
-    reviewsCount: "1,430",
-    artwork: "images/games/dust-protocol.svg",
-    shortDesc: "Hardcore tactical military extraction shooter set in a brutal windswept desert compound.",
-    fullDesc: "Dust Protocol emphasizes realism, communication, and calculated tactical positioning. Infiltrate contested hazard zones amidst swirling dust storms, secure classified intelligence containers, and reach the extraction LZ before rival mercenary squads intercept your squad.",
+    id: "elden-ring",
+    title: "Elden Ring: Shadow of the Erdtree",
+    price: 39.99,
+    originalPrice: null,
+    genre: "RPG · Action · Dark Fantasy · PC / Console",
+    primaryGenre: "RPG",
+    platforms: "PC / Console",
+    badge: "GOTY",
+    badgeClass: "badge-featured",
+    rating: 4.9,
+    reviewsCount: "890,000",
+    coverLandscape: "images/covers/landscape/elden-ring.jpg",
+    coverPortrait: "images/covers/portrait/elden-ring.jpg",
+    artwork: "images/covers/landscape/elden-ring.jpg",
+    shortDesc: "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring.",
+    fullDesc: "Winner of hundreds of Game of the Year awards, Elden Ring is FromSoftware's masterwork open-world action RPG created by Hidetaka Miyazaki and George R. R. Martin. Journey across the Lands Between and enter the Land of Shadow to unravel the mystery of Miquella.",
     features: [
-      "Ballistic physics simulating wind drift, bullet penetration, and weapon sway",
-      "Dynamic sandstorm visibility system forcing thermal and NVG reliance",
-      "Full weapon modding system with authentic military attachments",
-      "High stakes extraction mechanics with persistent armory stash"
+      "Vast interconnected fantasy world with seamless field exploration and multi-level legacy dungeons",
+      "Unrivaled build variety: sorceries, incantations, colossal weapons, and spirit ashes",
+      "Challenging, legendary boss encounters designed with exquisite artistic grandeur",
+      "Co-op summoning and competitive invasion multiplayer"
     ],
     sysReq: {
       os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i5-8400 / AMD Ryzen 5 2600",
-      gpu: "NVIDIA GTX 1070 / AMD Radeon RX 590",
-      ram: "16 GB RAM",
+      cpu: "Intel Core i5-8400 / AMD Ryzen 3 3300X",
+      gpu: "NVIDIA GTX 1060 3GB / AMD Radeon RX 580 4GB",
+      ram: "12 GB RAM",
+      storage: "80 GB SSD"
+    }
+  },
+  {
+    id: "rdr2",
+    title: "Red Dead Redemption 2",
+    price: 19.99,
+    originalPrice: 59.99,
+    genre: "Adventure · Open World · Western · PC / Console",
+    primaryGenre: "Adventure",
+    platforms: "PC / Console",
+    badge: "SALE -67%",
+    badgeClass: "badge-sale",
+    rating: 4.9,
+    reviewsCount: "940,000",
+    coverLandscape: "images/covers/landscape/rdr2.jpg",
+    coverPortrait: "images/covers/portrait/rdr2.jpg",
+    artwork: "images/covers/landscape/rdr2.jpg",
+    shortDesc: "America, 1899. Arthur Morgan and the Van der Linde gang are outlaws on the run across rugged frontier lands.",
+    fullDesc: "Winner of over 175 Game of the Year Awards and recipient of over 250 perfect scores, Red Dead Redemption 2 is an epic tale of honor and loyalty at the dawn of the modern age. As federal agents and bounty hunters close in, the gang must rob, steal, and fight their way across the rugged heartland of America.",
+    features: [
+      "The most detailed and responsive open world ever constructed in video game history",
+      "Deep narrative centering on Arthur Morgan with dynamic morality honor choices",
+      "Realistic ecosystem featuring over 300 animal species with authentic hunting and tracking",
+      "Includes Red Dead Online with specialized Frontier Pursuits and multiplayer missions"
+    ],
+    sysReq: {
+      os: "Windows 10/11 64-bit",
+      cpu: "Intel Core i5-2500K / AMD FX-6300",
+      gpu: "NVIDIA GTX 770 2GB / AMD Radeon R9 280 3GB",
+      ram: "8 GB RAM",
+      storage: "150 GB SSD"
+    }
+  },
+  {
+    id: "witcher-3",
+    title: "The Witcher 3: Wild Hunt - Complete Edition",
+    price: 14.99,
+    originalPrice: 39.99,
+    genre: "RPG · Open World · Dark Fantasy · PC / Console",
+    primaryGenre: "RPG",
+    platforms: "PC / Console",
+    badge: "SALE -62%",
+    badgeClass: "badge-sale",
+    rating: 4.9,
+    reviewsCount: "820,000",
+    coverLandscape: "images/covers/landscape/witcher-3.jpg",
+    coverPortrait: "images/covers/portrait/witcher-3.jpg",
+    artwork: "images/covers/landscape/witcher-3.jpg",
+    shortDesc: "You are Geralt of Rivia, monster slayer for hire, hunting the Child of Prophecy across a war-torn continent.",
+    fullDesc: "The Witcher: Wild Hunt is a story-driven open world RPG set in a visually stunning fantasy universe full of meaningful choices and impactful consequences. In The Witcher, you play as professional monster hunter Geralt of Rivia tasked with finding a child of prophecy in a vast world rich with merchant cities, pirate islands, and perilous mountain passes.",
+    features: [
+      "Over 150 hours of award-winning gameplay including Hearts of Stone & Blood and Wine expansions",
+      "Next-Gen updated with ray-traced reflections, 4K textures, and integrated community mods",
+      "Deep alchemy, combat signs, and monster tracking bestiary",
+      "Full standalone Gwent card game embedded within the adventure"
+    ],
+    sysReq: {
+      os: "Windows 10/11 64-bit",
+      cpu: "Intel Core i5-2500K / AMD Phenom II X4 940",
+      gpu: "NVIDIA GTX 660 / AMD Radeon HD 7870",
+      ram: "8 GB RAM",
       storage: "50 GB SSD"
     }
   },
   {
-    id: "wavebound",
-    title: "Wavebound",
-    price: 27.99,
+    id: "gow-ragnarok",
+    title: "God of War Ragnarök",
+    price: 59.99,
     originalPrice: null,
-    genre: "Indie · Exploration · PC / Console",
-    primaryGenre: "Indie",
-    platforms: "PC / Console",
-    badge: "NEW",
-    badgeClass: "badge-new",
-    rating: 4.9,
-    reviewsCount: "2,040",
-    artwork: "images/games/wavebound.svg",
-    shortDesc: "Sail turquoise seas, uncover submerged ruins, and bond with luminescent ocean wildlife.",
-    fullDesc: "Wavebound is a peaceful yet thrilling nautical voyage across an uncharted tropical archipelago. Customize your sailing vessel, dive into glowing coral trenches, solve puzzles inside forgotten ocean temples, and glide alongside majestic bioluminescent sea creatures.",
-    features: [
-      "Relaxing yet deeply rewarding oceanic exploration and diving mechanics",
-      "Gorgeous stylized pastel art direction with fluid water simulation",
-      "Charming nautical crafting, island settlements, and creature companions",
-      "Play at your own pace with dedicated cozy and survival modes"
-    ],
-    sysReq: {
-      os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i3-10100 / AMD Ryzen 3 3100",
-      gpu: "NVIDIA GTX 1050 Ti / AMD Radeon RX 560",
-      ram: "8 GB RAM",
-      storage: "25 GB SSD"
-    }
-  },
-  {
-    id: "chrono-shift",
-    title: "Chrono Shift",
-    price: 31.99,
-    originalPrice: 39.99,
-    genre: "Adventure · Sci-Fi · PC",
-    primaryGenre: "Adventure",
-    platforms: "PC",
-    badge: "SALE",
-    badgeClass: "badge-sale",
-    rating: 4.8,
-    reviewsCount: "1,120",
-    artwork: "images/games/chrono-shift.svg",
-    shortDesc: "Manipulate time streams and solve mind-bending chronological paradoxes to save history.",
-    fullDesc: "Equipped with the Chrono-Drive gauntlet, alter the flow of time around objects, rewind failed jumps, and synchronize actions across multiple parallel timelines to overcome impossible obstacles.",
-    features: [
-      "Innovative 4D puzzle solving with rewind and temporal cloning",
-      "Gripping sci-fi mystery written by award-winning game authors",
-      "Challenging time trial trials with global speedrun leaderboards"
-    ],
-    sysReq: {
-      os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i5-10400 / AMD Ryzen 5 3600",
-      gpu: "NVIDIA RTX 2060 / AMD Radeon RX 5600 XT",
-      ram: "16 GB RAM",
-      storage: "30 GB SSD"
-    }
-  },
-  {
-    id: "shadow-blade",
-    title: "Shadow Blade",
-    price: 34.99,
-    originalPrice: null,
-    genre: "Action · Stealth · PC / Console",
+    genre: "Action · Adventure · Mythic · PC / Console",
     primaryGenre: "Action",
     platforms: "PC / Console",
-    badge: "HOT",
-    badgeClass: "badge-hot",
-    rating: 4.9,
-    reviewsCount: "3,890",
-    artwork: "images/games/shadow-blade.svg",
-    shortDesc: "Master the art of silent assassination across feudal castles bathed in moonlit mist.",
-    fullDesc: "Shadow Blade is a lethal test of stealth, timing, and precision swordplay. Infiltrate heavily guarded fortresses, utilize shadows, deploy grappling hooks, and engage in intense duels where a single strike decides your fate.",
-    features: [
-      "Unforgiving precision parry and deflection combat system",
-      "Vertical rooftop stealth traversal with grappling tools and smoke arts",
-      "Immersive feudal Japanese atmosphere with traditional bamboo audio design"
-    ],
-    sysReq: {
-      os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i7-8700 / AMD Ryzen 5 3600X",
-      gpu: "NVIDIA GTX 1660 Super / AMD Radeon RX 5600",
-      ram: "16 GB RAM",
-      storage: "45 GB SSD"
-    }
-  },
-  {
-    id: "stellaris-horizon",
-    title: "Stellaris Horizon",
-    price: 44.99,
-    originalPrice: null,
-    genre: "Strategy · Sci-Fi · PC",
-    primaryGenre: "RPG",
-    platforms: "PC",
-    badge: "FEATURED",
-    badgeClass: "badge-featured",
-    rating: 4.8,
-    reviewsCount: "2,280",
-    artwork: "images/games/stellaris-horizon.svg",
-    shortDesc: "Expand a fledgling starfaring civilization into a dominant galactic power.",
-    fullDesc: "Command colossal armada fleets, survey mysterious wormholes, negotiate interstellar diplomacy, and build megastructures orbiting giant ringed gas worlds in this grand space strategy epic.",
-    features: [
-      "Procedurally generated galaxy maps with thousands of star systems",
-      "Modular warship designer with hundreds of weapon and shield loadouts",
-      "Complex diplomatic councils, espionage networks, and galactic trade routes"
-    ],
-    sysReq: {
-      os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i7-11700 / AMD Ryzen 7 5700X",
-      gpu: "NVIDIA RTX 3060 / AMD Radeon RX 6600",
-      ram: "32 GB RAM",
-      storage: "40 GB SSD"
-    }
-  },
-  {
-    id: "cyber-siege",
-    title: "Cyber Siege",
-    price: 22.99,
-    originalPrice: 29.99,
-    genre: "Shooter · Tactical · PC / Console",
-    primaryGenre: "Shooter",
-    platforms: "PC / Console",
-    badge: "SALE",
-    badgeClass: "badge-sale",
-    rating: 4.7,
-    reviewsCount: "1,670",
-    artwork: "images/games/cyber-siege.svg",
-    shortDesc: "Coordinate tactical breaches with deployable hard-light shields and cyber drones.",
-    fullDesc: "Close-quarters tactical combat re-imagined with near-future cyber warfare. Breach barricaded rooms, disrupt electronic defenses with EMP blasts, and utilize hex-shield walls to protect your fireteam during intense tactical hostage extractions.",
-    features: [
-      "Destructible environmental geometry with dynamic breaching points",
-      "Deployable cyber-gadgets including auto-turrets, drones, and sensor dart traps",
-      "Competitive 5v5 ranked tactical search and rescue modes"
-    ],
-    sysReq: {
-      os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i5-9400 / AMD Ryzen 5 2600",
-      gpu: "NVIDIA GTX 1060 / AMD Radeon RX 580",
-      ram: "16 GB RAM",
-      storage: "55 GB SSD"
-    }
-  },
-  {
-    id: "mythic-realm",
-    title: "Mythic Realm",
-    price: 36.99,
-    originalPrice: null,
-    genre: "Adventure · RPG · PC / Console",
-    primaryGenre: "Adventure",
-    platforms: "PC / Console",
     badge: "NEW",
     badgeClass: "badge-new",
     rating: 4.9,
-    reviewsCount: "2,740",
-    artwork: "images/games/mythic-realm.svg",
-    shortDesc: "Unravel the ancient chronicles of Gaia amidst enchanted glowing forests and ancient druid monoliths.",
-    fullDesc: "Step into an ethereal realm where nature itself is infused with primordial magic. Tame mythical beasts, awaken forgotten stone monoliths, and protect the world tree from corrupting shadow blights.",
+    reviewsCount: "310,000",
+    coverLandscape: "images/covers/landscape/gow.jpg",
+    coverPortrait: "images/covers/portrait/gow.jpg",
+    artwork: "images/covers/landscape/gow.jpg",
+    shortDesc: "Join Kratos and Atreus on a mythic journey for answers before the prophesied battle that will end the world.",
+    fullDesc: "From Santa Monica Studio comes the sequel to the critically acclaimed God of War (2018). Kratos and Atreus must journey to each of the Nine Realms in search of answers as Asgardian forces prepare for a prophesied battle that will end the world. Along the way they will explore stunning mythic landscapes and face fearsome Norse gods and monsters.",
     features: [
-      "Stunning hand-crafted open world with bioluminescent flora and fauna",
-      "Form companionships with wild gryphons, spirit wolves, and forest drakes",
-      "Harmonious ambient soundtrack composed with authentic Celtic instruments"
+      "Master the Leviathan Axe, Blades of Chaos, and the new Draupnir Spear with fluid combat combos",
+      "Explore all Nine Realms of Norse mythology across lush jungles, frozen lakes, and dwarven mines",
+      "Deep emotional father-and-son character arc praised as a storytelling masterpiece",
+      "Includes God of War Ragnarök: Valhalla roguelite expansion mode at no additional cost"
     ],
     sysReq: {
       os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i5-11400 / AMD Ryzen 5 3600",
-      gpu: "NVIDIA RTX 2060 / AMD Radeon RX 5700",
+      cpu: "Intel Core i5-6600K / AMD Ryzen 5 1600",
+      gpu: "NVIDIA GTX 1060 6GB / AMD Radeon RX 570 4GB",
       ram: "16 GB RAM",
-      storage: "60 GB SSD"
+      storage: "190 GB SSD"
     }
   },
   {
-    id: "velocity-apex",
-    title: "Velocity Apex",
-    price: 26.99,
-    originalPrice: 34.99,
-    genre: "Racing · Street · PC / Console",
-    primaryGenre: "Racing",
-    platforms: "PC / Console",
-    badge: "SALE",
-    badgeClass: "badge-sale",
-    rating: 4.7,
-    reviewsCount: "1,980",
-    artwork: "images/games/velocity-apex.svg",
-    shortDesc: "Pure street racing precision across hyper-detailed neon rain-soaked coastal highways.",
-    fullDesc: "Push exotic hypercars to their absolute limits in illegal night-time street circuits. Master tire grip physics, nitrous delivery curves, and custom engine tuning to outrun the police and dominate the underground championship.",
+    id: "minecraft",
+    title: "Minecraft: Java & Bedrock Edition",
+    price: 29.99,
+    originalPrice: null,
+    genre: "Adventure · Sandbox · Survival · PC",
+    primaryGenre: "Adventure",
+    platforms: "PC",
+    badge: "BESTSELLER",
+    badgeClass: "badge-hot",
+    rating: 4.9,
+    reviewsCount: "2,100,000",
+    coverLandscape: "images/covers/landscape/minecraft.jpg",
+    coverPortrait: "images/covers/portrait/minecraft.jpg",
+    artwork: "images/covers/landscape/minecraft.jpg",
+    shortDesc: "Build anything you can imagine, explore infinite voxel worlds, and survive the dangerous night.",
+    fullDesc: "Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs. Includes both Java and Bedrock editions in a unified launcher.",
     features: [
-      "Over 70 licensed and custom tuner vehicles with meticulous engine audio",
-      "Deep aesthetic and performance customization with real Dyno tuning stats",
-      "Seamless online open world where players encounter each other naturally"
+      "Both Java Edition and Bedrock Edition included with unified cross-play",
+      "Endless creative freedom: redstone engineering, command blocks, and infinite worlds",
+      "Massive multiplayer community with survival servers, mini-games, and custom shaders",
+      "Vast modding ecosystem with thousands of community mods, resource packs, and maps"
     ],
     sysReq: {
       os: "Windows 10/11 64-bit",
-      cpu: "Intel Core i7-9700 / AMD Ryzen 7 3700X",
-      gpu: "NVIDIA RTX 3060 / AMD Radeon RX 6600 XT",
-      ram: "16 GB RAM",
-      storage: "65 GB SSD"
+      cpu: "Intel Core i3-3210 / AMD A8-7600 APU",
+      gpu: "Intel HD Graphics 4000 / AMD Radeon R5 series",
+      ram: "4 GB RAM",
+      storage: "4 GB SSD"
+    }
+  },
+  {
+    id: "ea-fc-24",
+    title: "EA SPORTS FC 24",
+    price: 27.99,
+    originalPrice: 69.99,
+    genre: "Racing · Sports · Simulation · PC / Console",
+    primaryGenre: "Racing",
+    platforms: "PC / Console",
+    badge: "SALE -60%",
+    badgeClass: "badge-sale",
+    rating: 4.4,
+    reviewsCount: "195,000",
+    coverLandscape: "images/covers/landscape/ea-fc-24.jpg",
+    coverPortrait: "images/covers/portrait/ea-fc-24.jpg",
+    artwork: "images/covers/landscape/ea-fc-24.jpg",
+    shortDesc: "Experience unparalleled realism in the World's Game powered by HyperMotionV and PlayStyles.",
+    fullDesc: "EA SPORTS FC 24 welcomes you to The World's Game: the truest football experience ever with HyperMotionV, PlayStyles optimized by Opta, and a revolutionized Frostbite Engine. Build your dream squad in Ultimate Team with men's and women's football playing together on the same pitch.",
+    features: [
+      "Over 19,000 fully licensed players, 700+ teams, and 30+ leagues worldwide",
+      "HyperMotionV captures match rhythm and fluidity using volumetric data from 180+ top-tier matches",
+      "PlayStyles dimensionalize athletes, interpreting data from Opta into signature player abilities",
+      "Cross-play in Clubs, Co-Op Seasons, and Ultimate Team modes"
+    ],
+    sysReq: {
+      os: "Windows 10/11 64-bit",
+      cpu: "Intel Core i5-6600K / AMD Ryzen 5 1600",
+      gpu: "NVIDIA GTX 1050 Ti 4GB / AMD Radeon RX 570 4GB",
+      ram: "8 GB RAM",
+      storage: "100 GB SSD"
     }
   }
 ];
 
-// 6 Featured carousel games (exact matching list from prompt)
-const FEATURED_GAMES = GAMES_DATA.slice(0, 6);
+// 6 Featured carousel games (GTA V, Cyberpunk 2077, COD MW3, AC Mirage, Elden Ring, RDR2)
+const FEATURED_GAMES = [
+  GAMES_DATA[0], // GTA V
+  GAMES_DATA[5], // Cyberpunk 2077
+  GAMES_DATA[1], // COD MW3
+  GAMES_DATA[2], // AC Mirage
+  GAMES_DATA[6], // Elden Ring
+  GAMES_DATA[7]  // Red Dead Redemption 2
+];
 
 // =============================================================================
 // APP STATE & SHOPPING CART
@@ -405,7 +442,7 @@ class GameGridStore {
         id: game.id,
         title: game.title,
         price: game.price,
-        artwork: game.artwork,
+        artwork: game.coverPortrait || game.artwork,
         platforms: game.platforms,
         quantity: 1
       });
@@ -521,14 +558,6 @@ class GameGridStore {
 
 // =============================================================================
 // FEATURED CAROUSEL CONTROLLER
-// Strict adherence to prompt:
-// - One large rounded card per slide
-// - Track uses gap: 0
-// - Position calculated as: currentIndex * 100%
-// - 10-second automatic rotation
-// - Seamless looping
-// - Progress bar strictly clipped inside gray rail (overflow: hidden, border-radius: 20px)
-// - Swipe / pointer drag interaction
 // =============================================================================
 class FeaturedCarousel {
   constructor() {
@@ -547,8 +576,6 @@ class FeaturedCarousel {
     // Pointer / Swipe state
     this.isDragging = false;
     this.startX = 0;
-    this.currentTranslate = 0;
-    this.prevTranslate = 0;
 
     this.init();
   }
@@ -566,7 +593,7 @@ class FeaturedCarousel {
       <div class="carousel-slide" data-id="${game.id}">
         <div class="slide-artwork">
           <div class="slide-badge ${game.badgeClass}">${game.badge}</div>
-          <img src="${getImagePath(game.artwork)}" alt="${game.title}">
+          <img src="${getImagePath(game.coverLandscape || game.artwork)}" alt="${game.title}">
         </div>
         <div class="slide-content">
           <div class="slide-meta-top">
@@ -598,13 +625,9 @@ class FeaturedCarousel {
   }
 
   updatePosition() {
-    // Exact full width calculation: currentIndex * 100%
     const offsetPercent = this.currentIndex * 100;
     this.track.style.transform = `translateX(-${offsetPercent}%)`;
 
-    // Progress bar inside rail:
-    // With 6 slides, each slide advances progress bar by 100% of its own width (which is 1/6th of rail).
-    // Indicator stays clipped cleanly within the 20px rounded rail.
     if (this.progressBar) {
       this.progressBar.style.transform = `translateX(${this.currentIndex * 100}%)`;
     }
@@ -654,7 +677,6 @@ class FeaturedCarousel {
   }
 
   bindEvents() {
-    // Button controls
     if (this.prevBtn) {
       this.prevBtn.addEventListener("click", () => this.prevSlide());
     }
@@ -662,31 +684,25 @@ class FeaturedCarousel {
       this.nextBtn.addEventListener("click", () => this.nextSlide());
     }
 
-    // Keyboard navigation
     window.addEventListener("keydown", (e) => {
-      // only trigger if no modals are open
       if (document.querySelector(".modal-backdrop.is-open")) return;
       if (e.key === "ArrowLeft") this.prevSlide();
       if (e.key === "ArrowRight") this.nextSlide();
     });
 
-    // Touch & Pointer Swipe Support
     const vp = this.viewport;
     if (!vp) return;
 
-    // Pointer events
     vp.addEventListener("pointerdown", (e) => this.dragStart(e));
     window.addEventListener("pointermove", (e) => this.dragMove(e));
     window.addEventListener("pointerup", (e) => this.dragEnd(e));
     window.addEventListener("pointercancel", (e) => this.dragEnd(e));
 
-    // Pause on hover
     vp.addEventListener("mouseenter", () => this.clearAutoTimer());
     vp.addEventListener("mouseleave", () => this.startAutoTimer());
   }
 
   dragStart(e) {
-    // Avoid triggering drag on interactive elements
     if (e.target.closest("button") || e.target.closest("a")) return;
     this.isDragging = true;
     this.startX = e.clientX;
@@ -714,20 +730,17 @@ class FeaturedCarousel {
     const diff = endX - this.startX;
 
     if (diff < -50) {
-      // Swiped left -> next
       this.nextSlide();
     } else if (diff > 50) {
-      // Swiped right -> prev
       this.prevSlide();
     } else {
-      // Snap back to current
       this.updatePosition();
     }
   }
 }
 
 // =============================================================================
-// STORE BROWSING CATALOG & FILTER ENGINE
+// STORE BROWSING CATALOG & FILTER ENGINE (PORTRAIT GAME CARDS)
 // =============================================================================
 function renderStoreGrid() {
   const grid = document.getElementById("storeGamesGrid");
@@ -765,7 +778,7 @@ function renderStoreGrid() {
 
   // Special filter (deals or new)
   if (store.filterSpecial === "deals") {
-    filtered = filtered.filter(g => g.originalPrice !== null || g.badge === "SALE");
+    filtered = filtered.filter(g => g.originalPrice !== null || g.badge.includes("SALE"));
   } else if (store.filterSpecial === "new") {
     filtered = filtered.filter(g => g.badge === "NEW");
   }
@@ -793,11 +806,12 @@ function renderStoreGrid() {
     return;
   }
 
+  // Renders Portrait Cards (aspect-ratio: 3/4)
   grid.innerHTML = filtered.map(game => `
     <div class="game-card">
       <div class="card-media" onclick="openGameDetail('${game.id}')">
         <div class="card-badge ${game.badgeClass}">${game.badge}</div>
-        <img src="${getImagePath(game.artwork)}" alt="${game.title}" loading="lazy">
+        <img src="${getImagePath(game.coverPortrait || game.artwork)}" alt="${game.title}" loading="lazy">
       </div>
       <div class="card-body">
         <div class="card-meta">
@@ -817,7 +831,7 @@ function renderStoreGrid() {
           </div>
           <div class="card-actions">
             <button class="btn-card-details" onclick="openGameDetail('${game.id}')">Details</button>
-            <button class="btn-card-add" onclick="window.gameStore.addToCart('${game.id}')">Add to Cart</button>
+            <button class="btn-card-add" onclick="window.gameStore.addToCart('${game.id}')">Add</button>
           </div>
         </div>
       </div>
@@ -860,7 +874,7 @@ function openGameDetail(gameId) {
   const modalBackdrop = document.getElementById("gameDetailModal");
   if (!modalBackdrop) return;
 
-  document.getElementById("modalGameImg").src = getImagePath(game.artwork);
+  document.getElementById("modalGameImg").src = getImagePath(game.coverLandscape || game.artwork);
   document.getElementById("modalGameBadge").textContent = game.badge;
   document.getElementById("modalGameBadge").className = `slide-badge ${game.badgeClass}`;
   document.getElementById("modalGameGenre").textContent = game.genre;
@@ -950,7 +964,6 @@ function closeCheckout() {
     checkoutModal.classList.remove("is-open");
     document.body.style.overflow = "";
   }
-  // Clear cart after checkout
   window.gameStore.cart = [];
   window.gameStore.saveCart();
   showToast("Order completed! Activation keys sent to your email.");
@@ -976,7 +989,6 @@ function showToast(message) {
   `;
   container.appendChild(toast);
 
-  // Trigger animation
   setTimeout(() => toast.classList.add("show"), 10);
 
   setTimeout(() => {
@@ -989,25 +1001,15 @@ function showToast(message) {
 // DOM EVENT LISTENERS INITIALIZATION
 // =============================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize Store Model
   window.gameStore = new GameGridStore();
-
-  // Initialize Featured Carousel
   window.featuredCarousel = new FeaturedCarousel();
-
-  // Initialize Store Grid
   renderStoreGrid();
 
-  // Navbar Cart Button
   const cartBtn = document.getElementById("cartOpenBtn");
-  if (cartBtn) {
-    cartBtn.addEventListener("click", openCart);
-  }
+  if (cartBtn) cartBtn.addEventListener("click", openCart);
 
   const cartCloseBtn = document.getElementById("cartCloseBtn");
-  if (cartCloseBtn) {
-    cartCloseBtn.addEventListener("click", closeCart);
-  }
+  if (cartCloseBtn) cartCloseBtn.addEventListener("click", closeCart);
 
   const cartBackdrop = document.getElementById("cartDrawerBackdrop");
   if (cartBackdrop) {
@@ -1016,7 +1018,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Promo code apply
   const promoApplyBtn = document.getElementById("promoApplyBtn");
   if (promoApplyBtn) {
     promoApplyBtn.addEventListener("click", () => {
@@ -1025,13 +1026,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Search input listeners
   const navSearch = document.getElementById("navSearchInput");
   if (navSearch) {
     navSearch.addEventListener("input", (e) => {
       window.gameStore.searchQuery = e.target.value;
       renderStoreGrid();
-      // Scroll to store if not in view
       const storeEl = document.getElementById("store");
       if (storeEl && window.scrollY < 200 && e.target.value.length > 0) {
         storeEl.scrollIntoView({ behavior: "smooth" });
@@ -1039,7 +1038,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Genre filter pills
   const genrePills = document.querySelectorAll(".filter-pill");
   genrePills.forEach(pill => {
     pill.addEventListener("click", () => {
@@ -1050,7 +1048,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Platform filter buttons
   const platButtons = document.querySelectorAll(".platform-btn");
   platButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -1061,7 +1058,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Sort dropdown
   const sortSelect = document.getElementById("storeSortSelect");
   if (sortSelect) {
     sortSelect.addEventListener("change", (e) => {
@@ -1070,7 +1066,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Navbar navigation smooth scroll & filter trigger
   document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", (e) => {
       const href = link.getAttribute("href");
@@ -1093,7 +1088,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Mobile navigation hamburger toggle
   const mobileBtn = document.getElementById("mobileMenuBtn");
   const navLinks = document.querySelector(".nav-links");
   if (mobileBtn && navLinks) {
@@ -1102,7 +1096,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Navbar shadow on scroll
   const navbar = document.querySelector(".navbar");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 20) {
@@ -1112,7 +1105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Modal backdrop click close
   const detailModal = document.getElementById("gameDetailModal");
   if (detailModal) {
     detailModal.addEventListener("click", (e) => {
@@ -1120,7 +1112,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Escape key closes modals
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeGameDetail();

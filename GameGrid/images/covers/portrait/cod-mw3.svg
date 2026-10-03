@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cod-p-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050a06"/>
+      <stop offset="60%" stop-color="#120505"/>
+      <stop offset="100%" stop-color="#2a0505"/>
+    </linearGradient>
+    <radialGradient id="cod-p-red" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#991b1b" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#050a06" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cod-p-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#cod-p-bg)"/>
+  <circle cx="300" cy="380" r="260" fill="url(#cod-p-red)"/>
+
+  <!-- Soldier Silhouette & Boonie Hat -->
+  <g fill="#020302">
+    <!-- Body -->
+    <path d="M160,800 L220,520 L270,480 L330,480 L380,520 L440,800 Z"/>
+    <!-- Head & Boonie Hat -->
+    <ellipse cx="300" cy="420" rx="55" ry="30"/>
+    <path d="M250,420 Q300,360 350,420 Z"/>
+    <!-- Glowing NVG Goggles -->
+    <circle cx="280" cy="425" r="5" fill="#22c55e" filter="url(#cod-p-glow)"/>
+    <circle cx="295" cy="425" r="5" fill="#22c55e" filter="url(#cod-p-glow)"/>
+    <circle cx="310" cy="425" r="5" fill="#22c55e" filter="url(#cod-p-glow)"/>
+  </g>
+
+  <!-- Big Red III Romal Numerals Behind -->
+  <g fill="#ef4444" opacity="0.9" filter="url(#cod-p-glow)">
+    <rect x="235" y="220" width="36" height="150"/>
+    <rect x="282" y="220" width="36" height="150"/>
+    <rect x="329" y="220" width="36" height="150"/>
+  </g>
+
+  <!-- Title Top -->
+  <g text-anchor="middle" font-family="'Inter', Arial, sans-serif">
+    <text x="300" y="100" font-size="22" font-weight="800" letter-spacing="12" fill="#d1d5db">CALL OF DUTY</text>
+    <text x="300" y="145" font-size="34" font-weight="900" letter-spacing="4" fill="#ffffff" filter="url(#cod-p-glow)">MODERN WARFARE</text>
+  </g>
+
+  <rect x="0" y="730" width="600" height="70" fill="#0b0f0c"/>
+  <text x="300" y="770" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="700" letter-spacing="6" fill="#ef4444">CROSS-GEN BUNDLE</text>
+</svg>

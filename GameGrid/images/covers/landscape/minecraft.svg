@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mc-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="40%" stop-color="#1e3a8a"/>
+      <stop offset="70%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="mc-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1000" height="650" fill="url(#mc-sky)"/>
+  <!-- Square Pixel Sun -->
+  <rect x="440" y="240" width="120" height="120" fill="#fef08a" filter="url(#mc-glow)"/>
+  <!-- Voxel Hills Silhouette -->
+  <g fill="#061009">
+    <rect x="0" y="520" width="1000" height="130"/>
+    <rect x="120" y="460" width="180" height="80"/>
+    <rect x="180" y="420" width="100" height="60"/>
+    <rect x="640" y="440" width="220" height="100"/>
+    <rect x="700" y="380" width="120" height="80"/>
+    <!-- Blocky Tree Left -->
+    <rect x="220" y="360" width="24" height="70" fill="#3f2314"/>
+    <rect x="190" y="290" width="84" height="80" fill="#15803d"/>
+  </g>
+  <g text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif">
+    <text x="500" y="160" font-size="74" font-weight="900" letter-spacing="8" fill="#e2e8f0" stroke="#1e293b" stroke-width="4" filter="url(#mc-glow)">MINECRAFT</text>
+    <text x="500" y="200" font-size="16" font-weight="800" letter-spacing="8" fill="#4ade80">JAVA &amp; BEDROCK EDITION</text>
+  </g>
+</svg>

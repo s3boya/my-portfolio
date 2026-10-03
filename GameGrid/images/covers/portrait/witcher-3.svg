@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="w3-p-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e18"/>
+      <stop offset="50%" stop-color="#182033"/>
+      <stop offset="100%" stop-color="#2d1d16"/>
+    </linearGradient>
+    <radialGradient id="w3-p-moon" cx="50%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#e0e7ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#6366f1" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0a0e18" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="w3-p-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#w3-p-bg)"/>
+  <circle cx="300" cy="360" r="230" fill="url(#w3-p-moon)"/>
+
+  <!-- Geralt Wolf Medallion Centerpiece -->
+  <g fill="#0b0f19" stroke="#818cf8" stroke-width="2.5" filter="url(#w3-p-glow)" transform="translate(300, 420) scale(1.3)">
+    <polygon points="0,-70 -50,-30 -30,40 0,80 30,40 50,-30"/>
+    <circle cx="-16" cy="-10" r="5" fill="#ef4444"/>
+    <circle cx="16" cy="-10" r="5" fill="#ef4444"/>
+  </g>
+
+  <!-- Title Top -->
+  <g text-anchor="middle" font-family="'Trajan Pro', 'Cinzel', serif">
+    <text x="300" y="80" font-size="18" font-weight="700" letter-spacing="10" fill="#cbd5e1">THE</text>
+    <text x="300" y="130" font-size="44" font-weight="900" letter-spacing="8" fill="#ffffff" filter="url(#w3-p-glow)">WITCHER 3</text>
+    <text x="300" y="170" font-size="20" font-weight="800" letter-spacing="10" fill="#ef4444">WILD HUNT</text>
+  </g>
+
+  <rect x="0" y="730" width="600" height="70" fill="#060910"/>
+  <text x="300" y="770" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="800" letter-spacing="6" fill="#cbd5e1">COMPLETE EDITION</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cs-p-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#121710"/>
+      <stop offset="50%" stop-color="#223018"/>
+      <stop offset="100%" stop-color="#0a0e08"/>
+    </linearGradient>
+    <radialGradient id="cs-p-flare" cx="50%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#eab308" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#65a30d" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#121710" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cs-p-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#cs-p-bg)"/>
+  <circle cx="300" cy="380" r="220" fill="url(#cs-p-flare)"/>
+
+  <!-- Iconic Circular Scope HUD -->
+  <g stroke="#84cc16" stroke-width="2" fill="none" opacity="0.65" filter="url(#cs-p-glow)">
+    <circle cx="300" cy="380" r="140"/>
+    <circle cx="300" cy="380" r="190" stroke-dasharray="15 15"/>
+    <line x1="300" y1="180" x2="300" y2="240"/>
+    <line x1="300" y1="520" x2="300" y2="580"/>
+    <line x1="100" y1="380" x2="160" y2="380"/>
+    <line x1="440" y1="380" x2="500" y2="380"/>
+  </g>
+
+  <!-- Iconic GSG-9 CT Operator Silhouette -->
+  <g fill="#020302">
+    <!-- Helmet & Visor -->
+    <ellipse cx="300" cy="400" rx="36" ry="40"/>
+    <path d="M260,395 Q300,370 340,395 L335,425 Q300,435 265,425 Z"/>
+    <!-- Body -->
+    <path d="M180,800 L240,490 L360,490 L420,800 Z"/>
+    <!-- M4A1 in hands -->
+    <line x1="360" y1="490" x2="490" y2="440" stroke="#020302" stroke-width="12"/>
+    <rect x="420" y="470" width="30" height="50" rx="4"/>
+  </g>
+
+  <!-- Title Top -->
+  <g text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif">
+    <text x="300" y="100" font-size="44" font-weight="900" letter-spacing="3" fill="#ffffff" filter="url(#cs-p-glow)">COUNTER-STRIKE</text>
+    <text x="300" y="160" font-size="52" font-weight="900" letter-spacing="6" fill="#eab308">1.6</text>
+  </g>
+
+  <rect x="0" y="730" width="600" height="70" fill="#070a05"/>
+  <text x="300" y="770" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="800" letter-spacing="6" fill="#84cc16">VALVE CLASSIC ANTHOLOGY</text>
+</svg>

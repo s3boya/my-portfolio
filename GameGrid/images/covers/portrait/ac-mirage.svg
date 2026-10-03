@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ac-p-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#121622"/>
+      <stop offset="40%" stop-color="#2c2834"/>
+      <stop offset="80%" stop-color="#7a4e28"/>
+      <stop offset="100%" stop-color="#c98236"/>
+    </linearGradient>
+    <radialGradient id="ac-p-sun" cx="50%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#fde68a" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#d97706" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#121622" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ac-p-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#ac-p-sky)"/>
+  <circle cx="300" cy="340" r="210" fill="url(#ac-p-sun)"/>
+
+  <!-- Ornate Islamic Baghdad Archway Outline -->
+  <path d="M120,800 L120,400 Q300,180 480,400 L480,800" fill="none" stroke="#fcd34d" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- Assassin Crest Behind Basim -->
+  <g stroke="#f59e0b" stroke-width="3" fill="none" opacity="0.75" filter="url(#ac-p-glow)">
+    <path d="M300,180 L230,340 L270,340 L300,280 L330,340 L370,340 Z"/>
+  </g>
+
+  <!-- Basim Hooded Assassin Silhouette -->
+  <g fill="#0b0a0e">
+    <!-- Hood Peak & Head -->
+    <polygon points="300,320 250,420 350,420"/>
+    <polygon points="300,320 288,345 312,345"/>
+    <!-- Cloak & Body -->
+    <path d="M250,420 Q200,560 170,800 L430,800 Q400,560 350,420 Z"/>
+    <!-- Hidden Blade Gleam Right Hand -->
+    <line x1="220" y1="580" x2="190" y2="670" stroke="#fde68a" stroke-width="3" filter="url(#ac-p-glow)"/>
+  </g>
+
+  <!-- Title Top -->
+  <g text-anchor="middle" font-family="'Trajan Pro', 'Cinzel', serif">
+    <text x="300" y="85" font-size="20" font-weight="700" letter-spacing="10" fill="#e5e7eb">ASSASSIN'S CREED</text>
+    <text x="300" y="130" font-size="46" font-weight="900" letter-spacing="12" fill="#fcd34d" filter="url(#ac-p-glow)">MIRAGE</text>
+  </g>
+
+  <rect x="0" y="740" width="600" height="60" fill="#080709"/>
+  <text x="300" y="775" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" font-weight="700" letter-spacing="5" fill="#fcd34d">UBISOFT ORIGINAL</text>
+</svg>

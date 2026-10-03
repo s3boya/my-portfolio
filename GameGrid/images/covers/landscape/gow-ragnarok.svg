@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gow-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b1320"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#070d18"/>
+    </linearGradient>
+    <radialGradient id="gow-ice" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0b1320" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gow-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1000" height="650" fill="url(#gow-bg)"/>
+  <circle cx="500" cy="325" r="300" fill="url(#gow-ice)"/>
+  <!-- Norse Omega Runic Crest -->
+  <g stroke="#38bdf8" stroke-width="4" fill="none" opacity="0.6" filter="url(#gow-glow)">
+    <path d="M420,440 L450,440 Q450,220 500,220 Q550,220 550,440 L580,440"/>
+  </g>
+  <!-- Red Spartan Tattoo Slash -->
+  <path d="M470,220 Q485,320 460,430" stroke="#ef4444" stroke-width="6" fill="none" filter="url(#gow-glow)"/>
+  <!-- Frozen Glacial Mountain Peaks -->
+  <polygon points="-50,650 -50,500 240,410 460,490 700,390 1050,480 1050,650" fill="#040810"/>
+  <g text-anchor="middle" font-family="'Cinzel', 'Trajan Pro', serif">
+    <text x="500" y="160" font-size="26" font-weight="700" letter-spacing="12" fill="#cbd5e1">PLAYSTATION STUDIOS</text>
+    <text x="500" y="215" font-size="64" font-weight="900" letter-spacing="8" fill="#ffffff" filter="url(#gow-glow)">GOD OF WAR</text>
+    <text x="500" y="260" font-size="24" font-weight="800" letter-spacing="14" fill="#38bdf8">RAGNARÖK</text>
+  </g>
+</svg>

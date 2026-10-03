@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ac-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141824"/>
+      <stop offset="40%" stop-color="#2d2b38"/>
+      <stop offset="70%" stop-color="#784e2d"/>
+      <stop offset="100%" stop-color="#d4924b"/>
+    </linearGradient>
+    <radialGradient id="ac-sun" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#b45309" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#141824" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ac-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="650" fill="url(#ac-sky)"/>
+  <circle cx="500" cy="340" r="220" fill="url(#ac-sun)"/>
+
+  <!-- Golden 9th Century Baghdad Domes and Minarets -->
+  <g fill="#0e0f14">
+    <!-- Mosque Domes Center -->
+    <path d="M420,460 Q500,280 580,460 Z"/>
+    <ellipse cx="500" cy="460" rx="80" ry="12"/>
+    <!-- Minaret Spire Left -->
+    <rect x="280" y="320" width="28" height="240"/>
+    <polygon points="275,320 294,220 313,320"/>
+    <!-- Minaret Spire Right -->
+    <rect x="690" y="300" width="30" height="260"/>
+    <polygon points="685,300 705,190 725,300"/>
+    <!-- Surrounding City Walls -->
+    <polygon points="-50,540 180,480 380,510 640,490 850,520 1050,470 1050,650 -50,650"/>
+  </g>
+
+  <!-- Soaring Eagle Silhouette -->
+  <g fill="#0b0b0e" opacity="0.9">
+    <path d="M480,180 Q500,165 520,180 Q540,160 560,180 Q540,190 520,185 Q500,195 480,180 Z"/>
+  </g>
+
+  <!-- Hooded Assassin Silhouette perched on ledge -->
+  <g fill="#08080a">
+    <polygon points="500,380 470,440 530,440"/>
+    <!-- Cloak trailing in desert breeze -->
+    <path d="M470,440 Q440,480 430,550 L570,550 Q560,480 530,440 Z"/>
+    <!-- Eagle eye hood point -->
+    <polygon points="500,380 492,395 508,395"/>
+    <!-- Hidden Blade Gleam -->
+    <line x1="455" y1="470" x2="440" y2="510" stroke="#fcd34d" stroke-width="2.5" filter="url(#ac-glow)"/>
+  </g>
+
+  <!-- Assassin Creed Brotherhood Insignia Crest -->
+  <g stroke="#f59e0b" stroke-width="2.5" fill="none" opacity="0.75" filter="url(#ac-glow)">
+    <path d="M500,230 L450,330 L480,330 L500,290 L520,330 L550,330 Z"/>
+  </g>
+
+  <!-- Title Artwork -->
+  <g text-anchor="middle" font-family="'Trajan Pro', 'Cinzel', 'Inter', serif">
+    <text x="500" y="110" font-size="24" font-weight="700" letter-spacing="12" fill="#e5e7eb">ASSASSIN'S CREED</text>
+    <text x="500" y="155" font-size="52" font-weight="900" letter-spacing="14" fill="#fcd34d" filter="url(#ac-glow)">MIRAGE</text>
+  </g>
+</svg>
